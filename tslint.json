@@ -24,6 +24,10 @@
         "property-declaration": "onespace",
         "variable-declaration": "onespace"
       }
+    ],
+    "quotemark": [
+      true,
+      "single"
     ]
   },
   "rulesDirectory": []
