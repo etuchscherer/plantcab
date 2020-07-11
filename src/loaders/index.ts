@@ -1,8 +1,15 @@
+import loadExpress from '@/loaders/express';
 import { info } from '@/services/logging';
 
-const label = 'Loading';
+const label = 'bootstrap';
 
 export default async () => {
 
-  info('the app is loading', label);
+  info('beginning bootstrap processes', label);
+
+  const app = await loadExpress();
+
+  return app;
 }
+
+export { label };
