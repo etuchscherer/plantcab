@@ -1,4 +1,7 @@
+import "module-alias/register";
 import express from "express";
+import { info } from "@/services/logging";
+
 const app = express();
 const port = 8080; // default port to listen
 
@@ -9,6 +12,5 @@ app.get("/", (req, res) => {
 
 // start the Express server
 app.listen(port, () => {
-  // tslint:disable-next-line:no-console
-  console.log(`server started at http://localhost:${port}`);
+  info(`servers started at http://localhost:${port}`, 'boot');
 });
