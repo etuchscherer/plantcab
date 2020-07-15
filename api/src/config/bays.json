@@ -1,0 +1,25 @@
+{
+  "collection": [{
+    "meta": {
+      "name": "Bay 1",
+      "description": "upstairs living room",
+      "climateControl": [
+        true,
+        {
+          "autoLightOn": [0600],
+          "autoLightOff": [2200]
+        }
+      ]
+    },
+    "equipment": [
+      {
+        "equipmentId": 3,
+        "enabled": true,
+        "pin": 1,
+        "passive": false,
+        "abstraction": "Pin",
+        "description": "The main overhead light"
+      }
+    ]
+  }]
+}
