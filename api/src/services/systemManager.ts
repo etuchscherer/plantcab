@@ -5,7 +5,7 @@ export default class SystemManager extends Cache {
 
   constructor({ boardOptions }: { boardOptions: RPIO.Options }) {
     super();
-    this.set('board', new Board(boardOptions));
+    this.set('main_board', new Board(boardOptions));
   }
 
   dumpCache() {

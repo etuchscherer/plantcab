@@ -14,7 +14,7 @@ describe('system manager tests', () => {
   });
 
   test('sets up the board, when instansiated', () => {
-    expect(manager.get('board')).toBeInstanceOf(Board);
+    expect(manager.get('main_board')).toBeInstanceOf(Board);
   });
 
   test('can debug the cache', () => {
