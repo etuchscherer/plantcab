@@ -1,16 +1,19 @@
 import express = require('express');
+import routes from '@/api/routes';
 import { info } from '@/services/logging';
 import { label } from '@/loaders';
-
-const app = express();
 
 const startServer = async () => {
 
   info('initializing express app', label);
 
-  // define a route handler for the default home page
-  app.get('/', (req, res) => {
-    res.send('Hello world!');
+  const app = express();
+  const router = express.Router();
+
+  info('initializing routes', label);
+
+  routes.forEach(route => {
+    app.use(route(app, router));
   });
 
   return app;
