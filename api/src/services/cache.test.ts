@@ -1,5 +1,19 @@
-import cache from '@/services/cache';
+import Cache from '@/services/cache';
 
-test('two plus two is four', () => {
-  expect(2 + 2).toBe(4);
+let cache: Cache;
+
+describe('can test the cache', () => {
+
+  beforeEach(() => {
+    cache = new Cache();
+  });
+
+  test('instansiates', () => {
+    expect(cache).toBeInstanceOf(Cache);
+  });
+
+  test('we can set a value in the cache', () => {
+    cache.set('foo', 'bar');
+    expect(cache.get('foo')).toBe('bar');
+  });
 });
