@@ -1,5 +1,5 @@
 import Board from '@/services/board';
-import { OUTPUT, LOW } from '@/services/board';
+import { OUTPUT, LOW, HIGH } from '@/services/board';
 
 let board: Board;
 
@@ -18,5 +18,12 @@ describe('gpio tests', () => {
     board.initPin(16, OUTPUT, LOW);
     const state = board.readPin(16);
     expect(state).toBe(LOW);
+  });
+
+  test('can turn a pin on', () => {
+    board.initPin(16, OUTPUT, LOW);
+    board.writePin(16, HIGH);
+    const state = board.readPin(16);
+    expect(state).toBe(HIGH);
   });
 });
