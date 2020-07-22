@@ -10,7 +10,7 @@
     "build": "npm-run-all clean lint tsc",
     "start:dev": "node --inspect=5858 ./dist/index.js",
     "start": "nodemon",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "keywords": [],
   "author": "",
