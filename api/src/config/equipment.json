@@ -1,0 +1,39 @@
+{
+  "data": [{
+      "id": 1,
+      "name": "main pump",
+      "description": "The main pump is responsible for watering plants, and providing nutrient solution. It runs on 110, and is controlled via relay.",
+      "productLink": "https://www.amazon.com/dp/B078LZS1XW/ref=cm_sw_r_tw_dp_x_nDKcFbVBCXGCH"
+    },{
+      "id": 2,
+      "name": "exhaust fan",
+      "description": "The main exhaust fan pulls hot air from the top of the cabinet. It runs on 12VDC, and is controlled by a multi-channel relay.",
+      "productLink": "https://www.amazon.com/dp/B07PG6927T/ref=cm_sw_r_tw_dp_x_MCKcFbCPPBV97"
+    },{
+      "id": 3,
+      "name": "intake fan",
+      "description": "The intake fan pulls cooler air into the bottom of the cabinet. It runs on 12VDC, and is controlled by a multi-channel relay.",
+      "productLink": "https://www.amazon.com/dp/B07PG6927T/ref=cm_sw_r_tw_dp_x_MCKcFbCPPBV97"
+    },{
+      "id": 4,
+      "name": "overhead light",
+      "description": "main overhead light. Bloomspec 600W. Runs on 110VAC. Controlled by a special relay.",
+      "productLink": "https://www.amazon.com/dp/B07MJ5MS81/ref=cm_sw_r_tw_dp_x_sBKcFbZN7P6JT"
+    },{
+      "id": 5,
+      "name": "ambient temp sensor",
+      "description": "ambient air temp sensor. Operates on 1-wire interface. Defaults to pin 4.",
+      "productLink": "https://www.amazon.com/dp/B012C597T0/ref=cm_sw_r_tw_dp_x_mEKcFbXW0CV0Q"
+    }, {
+      "id": 6,
+      "name": "mini transfer pump",
+      "description": "A 12vdc mini submersible water pump. 63 GPH / 240 LPH. Max lift is spec'd at 3 Meters, with a pipe.",
+      "productLink": "https://www.amazon.com/dp/B015GOGPSU/ref=cm_sw_r_tw_dp_x_Qq2cFb458288C"
+    }, {
+      "id": 7,
+      "name": "5 gal tote",
+      "description": "Reinforced stack-able 5 gal tote. Reinforced snap fit, and lockable",
+      "productLink": "https://www.amazon.com/dp/B079DG4FKF/ref=cm_sw_r_tw_dp_x_pO2cFbRBAAEEJ"
+    }
+  ]
+}

@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
-    "target": "es6",
+    "target": "es2019",
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,
@@ -11,7 +12,8 @@
     "paths": {
       "*": [
         "node_modules/*"
-      ]
+      ],
+      "@/*": ["src/*"]
     }
   },
   "include": [
