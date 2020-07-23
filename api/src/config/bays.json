@@ -6,7 +6,7 @@
       "climateControl": [
         true,
         {
-          "autoLightOn": [0600],
+          "autoLightOn": [600],
           "autoLightOff": [2200]
         }
       ]
@@ -14,10 +14,11 @@
     "equipment": [
       {
         "equipmentId": 3,
+        "name": "Main overhead light",
         "enabled": true,
         "pin": 1,
         "passive": false,
-        "abstraction": "Pin",
+        "abstraction": "Switch",
         "description": "The main overhead light"
       }
     ]
