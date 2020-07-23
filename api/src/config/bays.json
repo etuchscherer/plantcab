@@ -1,26 +1,13 @@
 {
-  "collection": [{
-    "meta": {
-      "name": "Bay 1",
-      "description": "upstairs living room",
-      "climateControl": [
-        true,
-        {
-          "autoLightOn": [600],
-          "autoLightOff": [2200]
-        }
-      ]
-    },
-    "equipment": [
-      {
-        "equipmentId": 3,
-        "name": "Main overhead light",
-        "enabled": true,
-        "pin": 1,
-        "passive": false,
-        "abstraction": "Switch",
-        "description": "The main overhead light"
-      }
-    ]
-  }]
+  "equipment": [
+    {
+      "equipmentId": 3,
+      "name": "Main overhead light",
+      "enabled": true,
+      "pin": 1,
+      "passive": false,
+      "abstraction": "Switch",
+      "description": "The main overhead light"
+    }
+  ]
 }
