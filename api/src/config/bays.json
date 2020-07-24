@@ -1,13 +1,18 @@
-{
+[{
+  "meta": {
+    "id": 1,
+    "name": "main bay",
+    "description": "The cabinet on the left.",
+  },
   "equipment": [
     {
       "equipmentId": 3,
       "name": "Main overhead light",
-      "enabled": true,
+      "isEnabled": true,
       "pin": 1,
       "passive": false,
-      "abstraction": "Switch",
+      "abstraction": "Light",
       "description": "The main overhead light"
     }
   ]
-}
+}]

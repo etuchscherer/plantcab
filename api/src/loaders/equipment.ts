@@ -1,16 +1,38 @@
 import Bays from '@/config/bays.json';
 import { info } from '@/services/logging';
+import Light from '@/objects/light';
+import express from 'express';
+import SystemManager from '@/services/systemManager';
+import { dasherize } from 'ember-cli-string-utils';
 
-const { equipment: equipmentCollection } = Bays;
 const label = 'bootstrap';
 
-const loadEquipment = () => {
+const loadEquipment = (app: express.Application) => {
 
-  info('loading equipment', label);
+  Bays.forEach(bay => {
+    const { equipment: equipmentCollection, meta } = bay;
+    const { systemManager }: { systemManager: SystemManager} = app.locals;
 
-  equipmentCollection.forEach(equipment => {
+    info('loading equipment', label);
 
-    info('eq :: ' + JSON.stringify(equipment), label);
+    equipmentCollection.forEach(equipment => {
+      const { abstraction, pin, isEnabled, name } = equipment;
+      const key: string = `bay ${meta.id} gpio ${pin}`;
+      let hardware;
+
+      info(`${name} is enabled, adding to system manager.`, label);
+
+      if (isEnabled) {
+        if (abstraction === 'Light') {
+          hardware = new Light(pin);
+        }
+
+        // add more abstraction types here
+      }
+
+      systemManager.set(dasherize(key), hardware);
+    });
+
   });
 };
 

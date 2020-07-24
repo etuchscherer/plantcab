@@ -16,7 +16,7 @@ export default async () => {
 
   // TODO: instansiating something, but it's not
   // configured yet.
-  loadEquipment();
+  loadEquipment(app);
 
   return app;
 }
