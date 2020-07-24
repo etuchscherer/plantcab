@@ -8,7 +8,7 @@ export default class Light implements Switchable {
   constructor(pin: number) {
     this.pin = pin;
     this.state = 0;
-  };
+  }
 
   on() {
     this.state = 1;

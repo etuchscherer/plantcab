@@ -16,6 +16,6 @@ async function startServer() {
   app.listen(port, () => {
     info(`servers started at http://localhost:${port}`, label);
   });
-};
+}
 
 startServer();

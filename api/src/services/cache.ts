@@ -19,7 +19,7 @@ export default class Cache {
     debug(`setting ${typeof value} at ${key}`, label);
     this._cache.set(key, value);
     return this;
-  };
+  }
 
   /**
    * Returns true if the supplied pin exists in the cache. Otherwise false.
@@ -30,7 +30,7 @@ export default class Cache {
     const isHit = this._cache.has(key);
     debug(`cache lookup for ${key}... ${isHit ? 'hit' : 'miss'}`, label);
     return isHit;
-  };
+  }
 
   /**
    * Returns a specified element from the cache. If the value that is
@@ -42,7 +42,7 @@ export default class Cache {
    */
   get(key: string) {
     return this._cache.get(key);
-  };
+  }
 
   /**
    * Removes the specified element from the cache.

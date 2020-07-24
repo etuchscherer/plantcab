@@ -17,7 +17,7 @@ const loadEquipment = (app: express.Application) => {
 
     equipmentCollection.forEach(equipment => {
       const { abstraction, pin, isEnabled, name } = equipment;
-      const key: string = `bay ${meta.id} gpio ${pin}`;
+      const key = `bay ${meta.id} gpio ${pin}`;
       let hardware;
 
       info(`${name} is enabled, adding to system manager.`, label);

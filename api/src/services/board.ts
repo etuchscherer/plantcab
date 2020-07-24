@@ -8,7 +8,7 @@ export default class Board {
   constructor(options: RPIO.Options) {
     this.rpio = rpio;
     rpio.init(options);
-  };
+  }
 
   initPin<T extends typeof OUTPUT | typeof INPUT,
     O extends typeof HIGH | typeof LOW
