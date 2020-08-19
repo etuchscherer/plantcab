@@ -12,5 +12,6 @@
     <Link to="/main">Main</Link>
     <Link to="/maintenance">Maintenance</Link>
   </nav>
-  <Route path="/main"><Main /></Route>
+  <Route path="/main" component="{Main}"></Route>
+  <!-- <Route path="/"><Main /></Route> -->
 </Router>
