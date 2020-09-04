@@ -1,6 +1,6 @@
 <style type="text/scss">
   h1 {
-    color: red;
+    @apply bg-black;
   }
 </style>
 

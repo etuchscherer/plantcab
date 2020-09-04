@@ -1,10 +1,18 @@
 <script lang="ts">
 
+  import Tailwindcss from './Tailwindcss.svelte';
   import { Router, Link, Route } from 'svelte-routing';
   import Main from './routes/Main.svelte';
 
   export let url: string = "";
 </script>
+
+<style type="text/scss">
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+</style>
 
 <Router url="{url}">
   <nav>
