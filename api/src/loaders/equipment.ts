@@ -7,7 +7,7 @@ import { dasherize } from 'ember-cli-string-utils';
 
 const label = 'bootstrap';
 
-const loadEquipment = (app: express.Application) => {
+const loadEquipment = (app: express.Application): void => {
 
   Bays.forEach(bay => {
     const { equipment: equipmentCollection, meta } = bay;

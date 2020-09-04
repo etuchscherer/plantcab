@@ -10,17 +10,17 @@ export default class Light implements Switchable {
     this.state = 0;
   }
 
-  on() {
+  on(): Light {
     this.state = 1;
     return this;
   }
 
-  off() {
+  off(): Light {
     this.state = 0;
     return this;
   }
 
-  isEnergized() {
+  isEnergized(): boolean {
     return this.state === 1;
   }
 }

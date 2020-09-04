@@ -4,7 +4,7 @@ import { info } from '@/services/logging';
 
 const label = 'bootstrap';
 
-const loadSystemManager = (app: express.Application) => {
+const loadSystemManager = (app: express.Application): void => {
 
   info('instansiating the System Manager', label);
   const config = {

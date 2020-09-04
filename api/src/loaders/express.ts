@@ -3,7 +3,7 @@ import routes from '@/api/routes';
 import { info } from '@/services/logging';
 import { label } from '@/loaders';
 
-const startServer = async () => {
+const startServer = async (): Promise<Express.Application> => {
 
   info('initializing express app', label);
 

@@ -5,7 +5,7 @@ import { info } from '@/services/logging';
 
 const label = 'bootstrap';
 
-export default async () => {
+export default async (): Promise<Express.Application> => {
 
   info('beginning bootstrap processes', label);
 

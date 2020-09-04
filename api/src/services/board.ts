@@ -12,7 +12,7 @@ export default class Board {
 
   initPin<T extends typeof OUTPUT | typeof INPUT,
     O extends typeof HIGH | typeof LOW
-  >(pin: number, mode: T, options: O) {
+  >(pin: number, mode: T, options: O): void {
     this.rpio.open(pin, mode, options);
   }
 
@@ -20,7 +20,7 @@ export default class Board {
    * Read a value from a pin
    * @param pin
    */
-  readPin(pin: number) {
+  readPin(pin: number): number {
     return this.rpio.read(pin);
   }
 
@@ -29,7 +29,7 @@ export default class Board {
    * @param pin
    * @param state
    */
-  writePin(pin: number, state: number) {
+  writePin(pin: number, state: number): void {
     return this.rpio.write(pin, state);
   }
 }

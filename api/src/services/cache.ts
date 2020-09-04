@@ -3,7 +3,7 @@ import { debug } from '@/services/logging';
 const label = 'cache-service';
 
 export default class Cache {
-  _cache: Map<string, any>;
+  _cache: Map<string, unknown>;
 
   constructor() {
     debug('creating new cache service', label);
@@ -15,7 +15,7 @@ export default class Cache {
    * @param {string} key
    * @param {any} value
    */
-  set(key: string, value: any) {
+  set(key: string, value: unknown): Cache {
     debug(`setting ${typeof value} at ${key}`, label);
     this._cache.set(key, value);
     return this;
@@ -26,7 +26,7 @@ export default class Cache {
    * @param {any} key
    * @returns {boolean}
    */
-  has(key: string) {
+  has(key: string): boolean {
     const isHit = this._cache.has(key);
     debug(`cache lookup for ${key}... ${isHit ? 'hit' : 'miss'}`, label);
     return isHit;
@@ -40,7 +40,7 @@ export default class Cache {
    * @param {any} key
    * @returns {any} item associated with key, or undefined if not found
    */
-  get(key: string) {
+  get(key: string): unknown {
     return this._cache.get(key);
   }
 
@@ -49,7 +49,7 @@ export default class Cache {
    * @param {any} key
    * @return {boolean} true if the item existed and was removed, otherwise false.
    */
-  delete(key: string) {
+  delete(key: string): boolean {
     return this._cache.delete(key);
   }
 
@@ -57,7 +57,7 @@ export default class Cache {
    * Flushes all elements from the cache.
    * @return {undefined}
    */
-  flush() {
+  flush(): void {
     return this._cache.clear();
   }
 
@@ -65,7 +65,7 @@ export default class Cache {
    * Dumps all cache entries to log.
    * @returns {object} a JSON object representing the entire contents of the cache.
    */
-  debug() {
+  debug(): unknown {
     const entries = this._cache;
     const json = Object.fromEntries(entries);
     debug(`${json}`, 'cache-dump');

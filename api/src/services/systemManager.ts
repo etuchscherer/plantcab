@@ -8,7 +8,7 @@ export default class SystemManager extends Cache {
     this.set('main_board', new Board(boardOptions));
   }
 
-  dumpCache() {
+  dumpCache(): unknown {
     return super.debug();
   }
 }
