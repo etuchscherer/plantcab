@@ -2,10 +2,11 @@ import loadExpress from '@/loaders/express';
 import loadSystemManager from '@/loaders/systemManager';
 import loadEquipment from '@/loaders/equipment';
 import { info } from '@/services/logging';
+import { Application } from 'express';
 
 const label = 'bootstrap';
 
-export default async (): Promise<Express.Application> => {
+export default async (): Promise<Application> => {
 
   info('beginning bootstrap processes', label);
 
