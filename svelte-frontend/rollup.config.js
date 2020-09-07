@@ -42,7 +42,7 @@ export default {
     copy({
       verbose: true,
       targets: [
-        { src: 'node_modules/tailwindcss/dist/tailwind.min.css', dest: 'public' }
+        { src: 'node_modules/tailwindcss/dist/tailwind.min.css', dest: 'public/build' }
       ]
     }),
 		svelte({
