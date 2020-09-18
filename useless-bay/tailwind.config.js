@@ -4,7 +4,7 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   experimental: {
-    darkModeVariant: true,
+    darkModeVariant: false,
   },
   dark: 'class', // This can be 'media' if preferred.
   purge: [

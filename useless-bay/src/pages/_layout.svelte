@@ -5,6 +5,13 @@
 <div class="flex h-full">
   <div class="flex flex-col justify-evenly bg-black h-full mx-auto">
     <section class="outer-border outer-dimensions flex flex-row justify-center items-center">
+      <div class="triangle-single-border">
+        <svg height="265" width="265">
+          <polygon points="0,0 265,0 265,265" style="fill:black;" />
+          <polyline points="0,0 3,0 265,262 265,265" style="fill:none;stroke:rgba(0,174,239, 0.3);stroke-width:5;stroke-linecap:round" />
+          Sorry, your browser does not support inline SVG.
+        </svg>
+      </div>
       <div class="flex  justify-center items-center inner-border inner-dimensions">
         <slot></slot>
       </div>
@@ -30,6 +37,18 @@
 
   :global(html, body) {
     height: 100%;
+  }
+
+  .triangle-underpants {
+    position: fixed;
+    top: 64px;
+    right: 80px;
+  }
+
+  .triangle-single-border {
+    position: fixed;
+    top: 64px;
+    right:80px;
   }
 
   .h-custom {
