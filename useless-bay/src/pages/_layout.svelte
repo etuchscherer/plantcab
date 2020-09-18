@@ -10,6 +10,8 @@
           <polygon points="0,0 265,0 265,265" style="fill:black;" />
           <polyline points="0,0 3,0 265,262 265,265" style="fill:none;stroke:rgba(0,174,239, 0.3);stroke-width:5;stroke-linecap:round" />
           Sorry, your browser does not support inline SVG.
+          <polygon points="15,0 265,0 265,250" style="fill:black;stroke:rgba(255,255,255,0.15);stroke-width:2;" />
+          <polygon points="32,7 258,7 258,233" style="fill:black;stroke:rgba(255,255,255,0.15);stroke-width:5;" />
         </svg>
       </div>
       <div class="flex  justify-center items-center inner-border inner-dimensions">
@@ -91,6 +93,7 @@
     color: rgba(255, 255, 255, 0.2);
     padding: 0px 22px;
     font-size: 50px;
+    font-weight: bold;
     line-height: 70px;
     border: 5px solid rgba(255, 255, 255, 0.2);
   }
