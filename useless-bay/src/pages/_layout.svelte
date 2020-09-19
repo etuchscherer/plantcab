@@ -1,7 +1,16 @@
 <script type="ts">
   import { isActive, url } from "@sveltech/routify";
+import { onMount } from "svelte";
   import Weather from "../components/Weather.svelte";
-  $: shouldShowWeather = !$isActive('./reports');
+  $: shouldShowWeather = $isActive('./main') || $isActive('./maintenance');
+
+  onMount(async () => {
+    if ($isActive('./index')) {
+      setTimeout(function() {
+        window.location.href = '/main';
+      }, 2000);
+    }
+  });
 </script>
 
 <div class="flex h-full">
