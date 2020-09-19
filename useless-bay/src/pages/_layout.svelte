@@ -1,25 +1,29 @@
 <script>
   import { isActive, url } from "@sveltech/routify";
+
+  $: shouldShowTriangle = !$isActive('./reports');
 </script>
 
 <div class="flex h-full">
   <div class="flex flex-col justify-evenly bg-black h-full mx-auto">
     <section class="outer-border outer-dimensions flex flex-row justify-center items-center">
       <div class="triangle-single-border">
-        <svg height="265" width="265">
-          <polygon points="0,0 265,0 265,265" style="fill:black;" />
-          <polyline points="0,0 3,0 265,262 265,265" style="fill:none;stroke:rgba(0,174,239, 0.3);stroke-width:5;stroke-linecap:round" />
-          <polygon points="15,0 265,0 265,250" style="fill:black;stroke:rgba(255,255,255,0.15);stroke-width:2;" />
-          <polygon points="32,7 258,7 258,233" style="fill:black;stroke:rgba(255,255,255,0.15);stroke-width:5;" />
+        {#if shouldShowTriangle}
+          <svg height="265" width="265">
+            <polygon points="0,0 265,0 265,265" style="fill:black;" />
+            <polyline points="0,0 3,0 265,262 265,265" style="fill:none;stroke:rgba(0,174,239, 0.3);stroke-width:5;stroke-linecap:round" />
+            <polygon points="15,0 265,0 265,250" style="fill:black;stroke:rgba(255,255,255,0.15);stroke-width:2;" />
+            <polygon points="32,7 258,7 258,233" style="fill:black;stroke:rgba(255,255,255,0.15);stroke-width:5;" />
 
-          <!-- gold triangle lines -->
-          <polyline points="6,9 259,262" style="stroke:black;stroke-width:5" />
-          <polyline points="5,15 251,261" style="stroke:#FDB913;stroke-width:5" />
-          <polyline points="4,20 245,261" style="stroke:black;stroke-width:3" />
-          <polyline points="4,23 243,262" style="stroke:rgba(253, 185, 19, 0.6);stroke-width:2" />
+            <!-- gold triangle lines -->
+            <polyline points="6,9 259,262" style="stroke:black;stroke-width:5" />
+            <polyline points="5,15 251,261" style="stroke:#FDB913;stroke-width:5" />
+            <polyline points="4,20 245,261" style="stroke:black;stroke-width:3" />
+            <polyline points="4,23 243,262" style="stroke:rgba(253, 185, 19, 0.6);stroke-width:2" />
 
-          Sorry, your browser does not support inline SVG.
-        </svg>
+            Sorry, your browser does not support inline SVG.
+          </svg>
+        {/if}
       </div>
       <div class="flex  justify-center items-center inner-border inner-dimensions">
         <slot></slot>
