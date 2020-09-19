@@ -13,8 +13,8 @@ import { onMount } from "svelte";
   });
 </script>
 
-<div class="flex h-full">
-  <div class="flex flex-col justify-evenly bg-black h-full mx-auto">
+<div class="flex">
+  <div class="flex flex-col justify-evenly bg-black h-full m-wrapper">
     <section class="outer-border outer-dimensions flex flex-row justify-center items-center">
       {#if shouldShowWeather}
         <Weather />
@@ -43,6 +43,10 @@ import { onMount } from "svelte";
 <style type="text/scss">
   .h-custom {
     height: 565px;
+  }
+
+  .m-wrapper {
+    margin: 67.5px auto;
   }
 
   .inner-border {
@@ -75,7 +79,8 @@ import { onMount } from "svelte";
   }
 
   footer {
-    height: 80px;
+    height: 70px;
+    margin-top: 30px;
   }
 
   .footer-link {
@@ -83,7 +88,7 @@ import { onMount } from "svelte";
     padding: 6px 12px;
     font-size: 50px;
     font-weight: bold;
-    line-height: 70px;
+    line-height: 60px;
     border: 5px solid rgba(255, 255, 255, 0.2);
     text-transform: uppercase;
 

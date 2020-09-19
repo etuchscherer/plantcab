@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
+import autoPreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import copy from 'rollup-plugin-copy';
 
@@ -53,7 +54,9 @@ export default {
 			css: css => {
 				css.write('public/build/bundle.css');
 			},
-			preprocess: sveltePreprocess({ extract: true }),
+			preprocess: autoPreprocess({
+        extract: true
+      }),
 		}),
 
 		// If you have external dependencies installed from
