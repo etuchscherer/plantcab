@@ -26,8 +26,8 @@
 
 <style type="text/scss">
   .triangle-wrapper {
-    position: fixed;
-    top: 64px;
-    right:80px;
+    position: absolute;
+    top: 7px;
+    right: 8px;
   }
 </style>

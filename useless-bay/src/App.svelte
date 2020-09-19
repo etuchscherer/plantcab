@@ -8,7 +8,13 @@
 <Router {routes} />
 
 <style type="text/scss">
+  @font-face {
+    font-family: NeutraText;
+    src: url('/assets/fonts/NeutraText-Bold.otf');
+  }
+
   :global(html, body) {
     height: 100%;
+    font-family: NeutraText;
   }
 </style>

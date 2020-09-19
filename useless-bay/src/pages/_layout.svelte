@@ -50,6 +50,7 @@
   }
 
   .outer-dimensions {
+    position: relative;
     width: 1145px;
     height: 565px;
   }
@@ -70,11 +71,12 @@
 
   .footer-link {
     color: rgba(255, 255, 255, 0.2);
-    padding: 0px 22px;
+    padding: 6px 12px;
     font-size: 50px;
     font-weight: bold;
     line-height: 70px;
     border: 5px solid rgba(255, 255, 255, 0.2);
+    text-transform: uppercase;
 
     &.active {
       border-color: red;
