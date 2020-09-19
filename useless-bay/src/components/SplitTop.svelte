@@ -26,7 +26,7 @@
 
   .top-status {
     width: 1095px;
-    height: 260px;
+    height: 231px;
   }
 
   .bottom-status {
