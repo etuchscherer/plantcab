@@ -15,6 +15,9 @@
           <!-- gold triangle lines -->
           <polyline points="6,9 259,262" style="stroke:black;stroke-width:5" />
           <polyline points="5,15 251,261" style="stroke:#FDB913;stroke-width:5" />
+          <polyline points="4,20 245,261" style="stroke:black;stroke-width:3" />
+          <polyline points="4,23 243,262" style="stroke:rgba(253, 185, 19, 0.6);stroke-width:2" />
+
           Sorry, your browser does not support inline SVG.
         </svg>
       </div>
