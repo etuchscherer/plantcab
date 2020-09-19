@@ -1,5 +1,5 @@
 <script>
-  import { url } from "@sveltech/routify";
+  import { isActive, url } from "@sveltech/routify";
 </script>
 
 <div class="flex h-full">
@@ -27,7 +27,7 @@
     </section>
 
     <footer class="flex flex-row justify-between">
-      <a class="footer-link" href={$url('./reports')}>Reports</a>
+      <a class="footer-link" class:active={$isActive('./reports')} href={$url('./reports')}>Reports</a>
       <div class="flex flex-col justify-evenly items-center failure-indicators">
         <div class="failure-indicator">
           !excess heat alert!
@@ -36,8 +36,8 @@
           !equipment failure!
         </div>
       </div>
-      <a class="footer-link" href={$url('./main')}>Main</a>
-      <a class="footer-link" href={$url('./maintenance')}>Maintenance</a>
+      <a class="footer-link" class:active={$isActive('./main')} href={$url('./main')}>Main</a>
+      <a class="footer-link" class:active={$isActive('./maintenance')} href={$url('./maintenance')}>Maintenance</a>
     </footer>
   </div>
 </div>
@@ -103,5 +103,10 @@
     font-weight: bold;
     line-height: 70px;
     border: 5px solid rgba(255, 255, 255, 0.2);
+
+    &.active {
+      border-color: red;
+      color: white;
+    }
   }
 </style>
