@@ -13,6 +13,11 @@
     src: url('/assets/fonts/NeutraText-Bold.otf');
   }
 
+  @font-face {
+    font-family: NeutraDemi;
+    src: url('/assets/fonts/NeutraTextTFDemiAlt.otf')
+  }
+
   :global(html, body) {
     height: 100%;
     font-family: NeutraText;
