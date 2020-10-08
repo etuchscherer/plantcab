@@ -3,7 +3,7 @@
 </script>
 
 <div class="outer-container flex flex-col">
-  <p class="flex-none description">Fan</p>
+  <p class="flex-none description">Light</p>
   <LightGraphic isActive={true} />
 </div>
 
