@@ -1,13 +1,13 @@
-<div class="flex flex-col flex-grow outer-container h-full">
-  <div class="m-2 mb-0 flex flex-grow top-status outer-border">
-    <div class="m-1 inner-border w-full">
+<div class="flex flex-col h-full p-1">
+  <div class="flex flex-grow top-status outer-border p-1">
+    <div class="inner-border w-full bg-crop p-1">
       <slot name="top-slot">
         Empty Slot
       </slot>
     </div>
   </div>
-  <div class="m-2 mt-2 flex flex-grow bottom-status outer-border">
-    <div class="m-1 inner-border w-full">
+  <div class="mt-1 flex flex-grow bottom-status outer-border p-1">
+    <div class="inner-border w-full">
       <slot name="bottom-slot">
         Empty Slot
       </slot>
@@ -24,13 +24,20 @@
     border: 2px solid rgba(253, 185, 19, 0.6);
   }
 
+  .bg-crop {
+    background-image: url("/assets/images/Grid.png");
+    background-repeat: repeat-y;
+    background-size: contain;
+    // background-position: center;
+  }
+
   .top-status {
-    width: 1095px;
+    width: 1110px;
     height: 231px;
   }
 
   .bottom-status {
-    width: 1095px;
+    width: 1110px;
     height: 240px;
   }
 </style>

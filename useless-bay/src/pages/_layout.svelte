@@ -14,13 +14,13 @@
   });
 </script>
 
-<div class="flex">
-  <div class="flex flex-col justify-evenly bg-black h-full m-wrapper">
-    <section class="outer-border outer-dimensions flex flex-row justify-center items-center">
+<div class="grid place-items-center grid-flow-col h-full">
+  <div>
+    <section class="outer-border p-1 outer-dimensions flex flex-row justify-center items-center">
       {#if shouldShowWeather}
         <Weather />
       {/if}
-      <div class="flex  justify-center items-center inner-border inner-dimensions">
+      <div class="flex w-full items-center inner-border self-stretch">
         <slot></slot>
       </div>
     </section>
@@ -42,21 +42,13 @@
 </div>
 
 <style type="text/scss">
-  .h-custom {
-    height: 565px;
-  }
 
-  .m-wrapper {
-    margin: 67.5px auto;
+  .self-baseline {
+    align-self: baseline;
   }
 
   .inner-border {
     border: 5px solid rgba(0,174,239, 0.3);
-  }
-
-  .inner-dimensions {
-    width: 1120px;
-    height: 540px;
   }
 
   .outer-border {

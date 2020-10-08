@@ -12,13 +12,13 @@
       <polygon points="32,7 258,7 258,233" style="fill:black;stroke:rgba(255,255,255,0.15);stroke-width:5;" />
 
       <!-- gold triangle lines -->
-      <polyline points="6,9 259,262" style="stroke:black;stroke-width:5" />
-      <polyline points="6,16 249,259" style="stroke:#FDB913;stroke-width:5;stroke-linecap:round" />
-      <polyline points="4,20 240,256" style="stroke:black;stroke-width:3;" />
+      <polyline points="4,7 259,262" style="stroke:black;stroke-width:5" />
+      <polyline points="4,14 251,261" style="stroke:#FDB913;stroke-width:5;stroke-linecap:round" />
+      <polyline points="1,16 245,261" style="stroke:black;stroke-width:3;" />
 
 
-      <polyline points="4,23 234,253" style="stroke:black;stroke-width:2" />
-      <polyline points="4,23 234,253" style="stroke:rgba(253, 185, 19, 0.6);stroke-width:2" />
+      <polyline points="0,18 238,257" style="stroke:black;stroke-width:2" />
+      <polyline points="0,18 238,257" style="stroke:rgba(253, 185, 19, 0.6);stroke-width:2" />
 
       Sorry, your browser does not support inline SVG.
     </svg>
@@ -27,7 +27,7 @@
 <style type="text/scss">
   .triangle-wrapper {
     position: absolute;
-    top: 7px;
-    right: 8px;
+    top: 4px;
+    right: 4px;
   }
 </style>

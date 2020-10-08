@@ -3,16 +3,19 @@
   import FanStatus from '../components/FanStatus.svelte';
   import PumpStatus from '../components/PumpStatus.svelte';
   import LightStatus from '../components/LightStatus.svelte';
+  import MainTemperature from '../components/MainTemperature.svelte';
 </script>
 
 <SplitTop>
-  <p slot="top-slot">This is the top slot on the main page</p>
+  <p class="flex flex-row h-full" slot="top-slot">
+    <MainTemperature />
+  </p>
 
-  <p class="flex flex-row h-full items-center justify-around" slot="bottom-slot">
+  <!-- <p class="flex flex-row h-full items-center justify-around" slot="bottom-slot">
     <PumpStatus />
     <FanStatus />
     <LightStatus />
-  </p>
+  </p> -->
 </SplitTop>
 
 <style type="text/scss">
