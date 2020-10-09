@@ -25,10 +25,8 @@
   }
 
   .bg-crop {
-    background-image: url("/assets/images/Grid.png");
-    background-repeat: repeat-y;
+    background-image: url("/assets/images/Grid50.png");
     background-size: contain;
-    // background-position: center;
   }
 
   .top-status {

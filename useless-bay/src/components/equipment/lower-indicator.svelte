@@ -1,22 +1,23 @@
 <script type="ts">
-  import CircleIndicator from './CircleIndicator.svelte';
+  import CircleIndicator from '../CircleIndicator.svelte';
+  import Warning from '../Warning.svelte';
+
   export let title: string;
   export let imageClass: string;
   export let isActive: boolean = false;
 </script>
 
 <div class="outer-border">
-  <div class="flex items-end">
+  <div class="flex items-end justify-between">
     <p class="title ml-4 mt-4">{title}</p>
-    <CircleIndicator size={'large'} fill="#ed1c24" isActive={false} />
-    <CircleIndicator size={'large'} fill="#72BF44" isActive={true} />
+    <span class="inline-flex">
+      <CircleIndicator size={'large'} fill="#ed1c24" isActive={!isActive} />
+      <CircleIndicator size={'large'} fill="#72BF44" isActive={isActive} />
+    </span>
+    <Warning size="lg" color="rgba(255, 255, 255, 0.4)" />
   </div>
 
-  <!-- <div class="flex-buster">
-    <span class="temperature p-2">
-      67°
-    </span>
-  </div> -->
+  <slot />
   <div class="flex-auto self-center m-5 h-full w-full bg-image {imageClass} {isActive ? 'active' : ''}" />
 </div>
 
@@ -30,6 +31,14 @@
 
       &.active {
         background-image: url("/assets/images/lower-indicators/pump-on.gif");
+      }
+    }
+
+    &.fan {
+      background-image: url("/assets/images/lower-indicators/fan.png");
+
+      &.active {
+        background-image: url("/assets/images/lower-indicators/fan-on.gif");
       }
     }
   }
