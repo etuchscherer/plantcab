@@ -4,11 +4,13 @@
   import PumpIndicator from '../components/equipment/indicators/pump.svelte';
   import FanIndicator from '../components/equipment/indicators/fan.svelte';
   import LightIndicator from '../components/equipment/indicators/light.svelte';
+  import ClimateControl from '../components/equipment/indicators/climate-control.svelte';
 </script>
 
 <SplitTop>
   <p class="flex flex-row h-full" slot="top-slot">
     <MainTemperature />
+    <ClimateControl />
   </p>
 
   <!-- <p class="flex flex-row h-full items-center justify-around" slot="bottom-slot"> -->

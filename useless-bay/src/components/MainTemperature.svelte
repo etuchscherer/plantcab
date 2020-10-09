@@ -1,8 +1,8 @@
-<div class="outer-wrapper p-1 flex">
+<div class="outer-wrapper p-1 ml-2 flex">
   <div class="inner-wrapper h-full">
     <div class="flex flex-col h-full">
       <div class="lead-text mx-auto">Internal Temperature</div>
-      <div class="temperature mx-auto">87°F</div>
+      <div class="temperature mx-2">87°F</div>
       <div class="flex flex-row text-xs mx-2 mt-3 items-stretch">
         <div class="unit-indicator m-0 px-1 active">°F</div>
         <div class="unit-indicator m-0 mx-1 px-1">°C</div>
