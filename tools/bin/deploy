@@ -1,0 +1,10 @@
+#!/bin/bash
+
+git branch -D gh-pages
+git checkout master && git checkout -b gh-pages
+cd useless-bay && npm run build && mv -v public ../docs
+# git add docs
+# git commit -m "deploying"
+
+# git push origin gh-pages --force && git checkout . && git checkout master
+# rm -rf ./docs
