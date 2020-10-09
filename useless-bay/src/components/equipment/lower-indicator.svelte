@@ -5,26 +5,38 @@
   export let title: string;
   export let imageClass: string;
   export let isActive: boolean = false;
+  export let size: string = 'normal';
 </script>
 
-<div class="outer-border">
-  <div class="flex items-end justify-between">
-    <p class="title ml-4 mt-4">{title}</p>
-    <span class="inline-flex">
-      <CircleIndicator size={'large'} fill="#ed1c24" isActive={!isActive} />
-      <CircleIndicator size={'large'} fill="#72BF44" isActive={isActive} />
-    </span>
-    <Warning size="lg" color="rgba(255, 255, 255, 0.4)" />
+<div class="flex flex-col outer-border {size}">
+  <div class="inline-flex items-center">
+    <p class="title ml-4 mt-4 { size === 'half-pint' ? 'flex-grow' : '' }">{title}</p>
+    {#if size === 'normal'}
+      <span class="inline-flex flex-grow">
+        <CircleIndicator size='medium' fill="#ed1c24" isActive={!isActive} />
+        <CircleIndicator size='medium' fill="#72BF44" isActive={isActive} />
+      </span>
+    {/if}
+    <div class="mr-4 mt-4">
+      <Warning size="lg" color="rgba(255, 255, 255, 0.4)" />
+    </div>
   </div>
 
   <slot />
-  <div class="flex-auto self-center m-5 h-full w-full bg-image {imageClass} {isActive ? 'active' : ''}" />
+  <div class="flex-grow w-full bg-image {imageClass} {isActive ? 'active' : ''}" />
+  {#if size === 'half-pint'}
+    <div class="inline-flex justify-evenly p-1">
+      <CircleIndicator size='large' fill="#ed1c24" isActive={!isActive} />
+      <CircleIndicator size='large' fill="#72BF44" isActive={isActive} />
+    </div>
+  {/if}
 </div>
 
 <style lang="scss">
 
   .bg-image {
     background-repeat: no-repeat;
+    background-position: center;
 
     &.pump {
       background-image: url("/assets/images/lower-indicators/pump.png");
@@ -41,13 +53,25 @@
         background-image: url("/assets/images/lower-indicators/fan-on.gif");
       }
     }
-  }
 
+    &.light {
+      background-image: url("/assets/images/lower-indicators/light.png");
+      background-size: 50%;
+
+      &.active {
+        background-image: url("/assets/images/lower-indicators/light-on.gif");
+      }
+    }
+  }
 
   .outer-border {
     border: 5px solid rgba(0,174,239, 0.5);
     border-radius: 14pt;
     min-width: 398px;
+
+    &.half-pint {
+      min-width: 238px;
+    }
   }
 
   p.title {

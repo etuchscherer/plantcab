@@ -5,6 +5,7 @@
 
   const sizes = {
     large: '38',
+    medium: '28',
     small: '22',
   }
 
