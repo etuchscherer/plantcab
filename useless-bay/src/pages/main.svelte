@@ -1,6 +1,6 @@
 <script type="ts">
   import SplitTop from '../components/SplitTop.svelte';
-  import MainTemperature from '../components/MainTemperature.svelte';
+  import MainTemperature from '../components/equipment/indicators/main-temp.svelte';
   import PumpIndicator from '../components/equipment/indicators/pump.svelte';
   import FanIndicator from '../components/equipment/indicators/fan.svelte';
   import LightIndicator from '../components/equipment/indicators/light.svelte';

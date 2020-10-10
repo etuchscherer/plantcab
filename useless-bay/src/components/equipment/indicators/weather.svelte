@@ -30,18 +30,19 @@
         <div class="time text-right">8:26 am</div>
       </div>
       <div class="flex flex-col p-2 right-col right-col items-center">
-        <div class="sun" />
+        <div class="sun rotate" />
         <div class="text-white external-temp-tag text-center mt-2">External Temp</div>
         <div class="text-yellow-100 external-temp">86°</div>
       </div>
-
     </div>
-
-
   </div>
 </div>
 
 <style type="text/scss">
+
+  .rotate {
+    animation: rotation 30s infinite linear;
+  }
 
   .right-col {
     width: 65px;
@@ -80,10 +81,20 @@
     position: absolute;
     top: 4px;
     right: 4px;
+    z-index: 9999;
   }
   .external-data {
     position: absolute;
     top: 4px;
     right: 4px;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
   }
 </style>

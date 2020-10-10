@@ -1,6 +1,6 @@
 <script type="ts">
-  import CircleIndicator from '../CircleIndicator.svelte';
-  import Warning from '../Warning.svelte';
+  import CircleIndicator from '../widgets/circle-indicator.svelte';
+  import Warning from '../widgets/warning-indicator.svelte';
 
   export let title: string;
   export let imageClass: string;
@@ -9,15 +9,15 @@
 </script>
 
 <div class="flex flex-col outer-border {size}">
-  <div class="inline-flex items-center">
-    <p class="title ml-4 mt-4 { size === 'half-pint' ? 'flex-grow' : '' }">{title}</p>
+  <div class="inline-flex items-center mt-3 ml-3">
+    <p class="title { size === 'half-pint' ? 'flex-grow' : '' }">{title}</p>
     {#if size === 'normal'}
       <span class="inline-flex flex-grow">
         <CircleIndicator size='medium' fill="#ed1c24" isActive={!isActive} />
         <CircleIndicator size='medium' fill="#72BF44" isActive={isActive} />
       </span>
     {/if}
-    <div class="mr-4 mt-4">
+    <div class="mr-4">
       <Warning size="lg" color="rgba(255, 255, 255, 0.4)" />
     </div>
   </div>
@@ -67,7 +67,7 @@
   .outer-border {
     border: 5px solid rgba(0,174,239, 0.5);
     border-radius: 14pt;
-    min-width: 398px;
+    min-width: 408px;
 
     &.half-pint {
       min-width: 238px;

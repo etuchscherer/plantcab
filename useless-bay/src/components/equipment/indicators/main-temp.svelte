@@ -1,4 +1,4 @@
-<div class="outer-wrapper p-1 ml-2 flex">
+<div class="outer-wrapper p-1 ml-1 flex">
   <div class="inner-wrapper h-full">
     <div class="flex flex-col h-full">
       <div class="lead-text mx-auto">Internal Temperature</div>
@@ -63,6 +63,7 @@
     border: 2px solid #00AEEF;
     border-radius: 29px;
     background-color: black;
+    z-index: 9999;
   }
 
   .inner-wrapper {

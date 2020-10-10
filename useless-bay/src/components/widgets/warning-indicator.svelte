@@ -5,9 +5,9 @@
   const sizeMap = {
     sm: '1rem',
     md: '2rem',
-    lg: '3rem',
-    xl: '4rem',
-    xxl: '5rem',
+    lg: '2.5rem',
+    xl: '3rem',
+    xxl: '4rem',
   }
 
   $: height = sizeMap[size];
