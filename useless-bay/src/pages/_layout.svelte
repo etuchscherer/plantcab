@@ -1,7 +1,7 @@
 <script type="ts">
   import { isActive, url } from "@sveltech/routify";
   import { onMount } from "svelte";
-  import Weather from "../components/Weather.svelte";
+  import Weather from "../components/equipment/indicators/weather.svelte";
 
   $: shouldShowWeather = $isActive('./main') || $isActive('./maintenance');
 

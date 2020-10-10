@@ -13,7 +13,6 @@
     <ClimateControl />
   </p>
 
-  <!-- <p class="flex flex-row h-full items-center justify-around" slot="bottom-slot"> -->
   <p class="flex justify-around flex-row h-full p-1" slot="bottom-slot">
     <PumpIndicator />
     <FanIndicator />
