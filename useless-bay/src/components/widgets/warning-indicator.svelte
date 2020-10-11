@@ -1,7 +1,7 @@
 <script type="ts">
   export let size: string = 'sm';
   export let color: string = 'currentColor'
-  export let message: string = 'foo';
+  export let message: string = '';
 
   const sizeMap = {
     sm: '1rem',
@@ -24,6 +24,7 @@
 
 <style lang="scss">
   .message {
+    width: 50px;
     font-size: 12px;
     line-height: 11px;
     text-transform: uppercase;

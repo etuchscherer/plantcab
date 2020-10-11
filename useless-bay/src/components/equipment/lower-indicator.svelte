@@ -6,19 +6,21 @@
   export let imageClass: string;
   export let isActive: boolean = false;
   export let size: string = 'normal';
+  export let warningMessage: string = '';
 </script>
 
 <div class="flex flex-col outer-border {size}">
   <div class="inline-flex items-center mt-3 ml-3">
     <p class="title { size === 'half-pint' ? 'flex-grow' : '' }">{title}</p>
     {#if size === 'normal'}
-      <span class="inline-flex">
+      <span class="inline-flex pl-3">
         <CircleIndicator size='medium' activeColor="#ed1c24" isActive={!isActive} />
         <CircleIndicator size='medium' activeColor="#72BF44" isActive={isActive} />
       </span>
     {/if}
-    <div class="mr-4 flex-grow">
-      <Warning size="lg" color="rgba(255, 255, 255, 0.4)" />
+    <div class="filler flex-grow"></div>
+    <div class="mr-4">
+      <Warning size="lg" color="rgba(255, 255, 255, 0.4)" message={warningMessage} />
     </div>
   </div>
 
