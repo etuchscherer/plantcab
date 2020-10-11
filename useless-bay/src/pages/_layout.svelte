@@ -1,6 +1,8 @@
 <script type="ts">
   import { isActive, url } from "@sveltech/routify";
   import { onMount } from "svelte";
+
+  import MessageIndicator from '../components/widgets/message-indicator.svelte';
   import Weather from "../components/equipment/indicators/weather.svelte";
 
   $: shouldShowWeather = $isActive('./main') || $isActive('./maintenance');
@@ -26,16 +28,12 @@
     </section>
 
     <footer class="flex flex-row justify-between">
-      <a class="footer-link" class:active={$isActive('./reports')} href={$url('./reports')}>Reports</a>
-      <div class="flex flex-col justify-evenly items-center failure-indicators">
-        <div class="failure-indicator">
-          !excess heat alert!
-        </div>
-        <div class="failure-indicator">
-          !equipment failure!
-        </div>
-      </div>
       <a class="footer-link" class:active={$isActive('./main')} href={$url('./main')}>Main</a>
+      <div class="flex flex-col">
+        <MessageIndicator message="!excess heat alert!" isActive={true} messageType="danger" />
+        <MessageIndicator message="!equipment failure!" isActive={true} messageType="danger" />
+      </div>
+      <a class="footer-link" class:active={$isActive('./reports')} href={$url('./reports')}>Reports</a>
       <a class="footer-link" class:active={$isActive('./maintenance')} href={$url('./maintenance')}>Maintenance</a>
     </footer>
   </div>
@@ -59,16 +57,6 @@
     position: relative;
     width: 1145px;
     height: 565px;
-  }
-
-  .failure-indicators {
-    background-color: rgba(255, 255, 255, 0.1);
-    font-size: 27px;
-    font-weight: bold;
-  }
-
-  .failure-indicators {
-    width: 280px;
   }
 
   footer {

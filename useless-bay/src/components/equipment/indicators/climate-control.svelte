@@ -8,7 +8,7 @@
     <p class="px-3 high-temp">Excess Heat!</p>
     <p class="px-3">Equipment Failure!</p>
   </div>
-  <div>
+  <div class="overflow-hidden">
     <img class="high-temp-sine flip-x" src="/assets/images/wave-high-temp.png" alt="" />
     <img class="low-temp-sine flip-x" src="/assets/images/wave-low-temp.png" alt="" />
   </div>

@@ -12,12 +12,12 @@
   <div class="inline-flex items-center mt-3 ml-3">
     <p class="title { size === 'half-pint' ? 'flex-grow' : '' }">{title}</p>
     {#if size === 'normal'}
-      <span class="inline-flex flex-grow">
+      <span class="inline-flex">
         <CircleIndicator size='medium' fill="#ed1c24" isActive={!isActive} />
         <CircleIndicator size='medium' fill="#72BF44" isActive={isActive} />
       </span>
     {/if}
-    <div class="mr-4">
+    <div class="mr-4 flex-grow">
       <Warning size="lg" color="rgba(255, 255, 255, 0.4)" />
     </div>
   </div>
