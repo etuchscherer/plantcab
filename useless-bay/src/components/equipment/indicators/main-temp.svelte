@@ -3,11 +3,10 @@
     <div class="flex flex-col h-full">
       <div class="lead-text mx-auto">Internal Temperature</div>
       <div class="temperature mx-2">87°F</div>
-      <div class="flex flex-row text-xs mx-2 mt-3 items-stretch">
+      <div class="flex flex-row text-xs mx-2 mt-3 justify-around">
         <div class="unit-indicator m-0 px-1 active">°F</div>
         <div class="unit-indicator m-0 mx-1 px-1">°C</div>
-        <div class="filler flex-grow" />
-        <div class="inline-flex manual-mode-indicator px-1 upcase active">Manual Mode Engaged</div>
+        <div class="manual-mode-indicator px-1 upcase active">Manual Mode Engaged</div>
       </div>
     </div>
   </div>
@@ -19,14 +18,10 @@
     text-transform: uppercase;
   }
 
-  .indicators {
-    // font-size: 22px;
-    color: red;
-  }
-
   .unit-indicator, .manual-mode-indicator {
     color: rgba(255,255,255, 0.2);
     border: 2px solid rgba(255,255,255, 0.2);
+    font-size: 18px;
 
     &.active {
       color: #72BF44;

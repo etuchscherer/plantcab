@@ -13,8 +13,8 @@
     <p class="title { size === 'half-pint' ? 'flex-grow' : '' }">{title}</p>
     {#if size === 'normal'}
       <span class="inline-flex">
-        <CircleIndicator size='medium' fill="#ed1c24" isActive={!isActive} />
-        <CircleIndicator size='medium' fill="#72BF44" isActive={isActive} />
+        <CircleIndicator size='medium' activeColor="#ed1c24" isActive={!isActive} />
+        <CircleIndicator size='medium' activeColor="#72BF44" isActive={isActive} />
       </span>
     {/if}
     <div class="mr-4 flex-grow">
@@ -26,8 +26,8 @@
   <div class="flex-grow w-full bg-image {imageClass} {isActive ? 'active' : ''}" />
   {#if size === 'half-pint'}
     <div class="inline-flex justify-evenly p-1">
-      <CircleIndicator size='large' fill="#ed1c24" isActive={!isActive} />
-      <CircleIndicator size='large' fill="#72BF44" isActive={isActive} />
+      <CircleIndicator size='large' activeColor="#ed1c24" isActive={!isActive} />
+      <CircleIndicator size='large' activeColor="#72BF44" isActive={isActive} />
     </div>
   {/if}
 </div>

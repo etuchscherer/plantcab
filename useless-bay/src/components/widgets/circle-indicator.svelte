@@ -1,7 +1,8 @@
 <script type="ts">
-  export let size;
-  export let fill;
-  export let isActive;
+  export let size: string = 'medium';
+  export let defaultColor: string = 'rgba(255,255,255,0.15)';
+  export let activeColor: string;
+  export let isActive: boolean;
 
   const sizes = {
     large: '38',
@@ -11,7 +12,7 @@
 
   let diameter = sizes[size];
   let radius = diameter / 2;
-  fill = isActive ? fill : 'rgba(255,255,255,0.15)';
+  let fill = isActive ? activeColor : defaultColor;
 </script>
 
 <svg class="m-1" height={diameter + "px"} width={diameter + "px"}>
