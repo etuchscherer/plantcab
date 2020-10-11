@@ -1,6 +1,10 @@
+<script lang="ts">
+  export let shouldShowGrid: boolean = false;
+</script>
+
 <div class="flex flex-col h-full p-1">
   <div class="flex flex-grow top-status outer-border p-1">
-    <div class="inner-border w-full bg-crop p-1">
+    <div class="inner-border w-full { shouldShowGrid ? 'bg-grid' : '' } p-1">
       <slot name="top-slot">
         Empty Slot
       </slot>
@@ -24,7 +28,7 @@
     border: 2px solid rgba(253, 185, 19, 0.6);
   }
 
-  .bg-crop {
+  .bg-grid {
     background-image: url("/assets/images/Grid50.png");
     background-size: contain;
   }
