@@ -5,7 +5,7 @@
   import Footer from '../components/footer.svelte';
 
   $: shouldShowWeather = $isActive('./main') || $isActive('./maintenance');
-  $: shouldDisableFooterMessages = $isActive('./loading');
+  $: shouldDisableFooterMessages = $isActive('./index');
 </script>
 
 <div class="grid place-items-center grid-flow-col h-full">
