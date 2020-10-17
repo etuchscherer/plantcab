@@ -2,14 +2,6 @@
   import { Router } from "@sveltech/routify";
   import { routes } from "@sveltech/routify/tmp/routes";
   import Tailwindcss from './Tailwindcss.svelte';
-
-  import WebFont from 'webfontloader';
-
-  WebFont.load({
-    custom: {
-      families: ['NeutraText', 'NeutraDemi']
-    }
-  });
 </script>
 
 <Tailwindcss />
