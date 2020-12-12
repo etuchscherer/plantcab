@@ -6,13 +6,15 @@
 
   $: shouldShowWeather = $isActive('./main') || $isActive('./maintenance');
   $: shouldDisableFooterMessages = $isActive('./index');
+  $: fatInnerTriangleColor = $isActive('./main') ? '#FDB913' : '#72bf44';
+  $: skinnyInnerTriangleColor = $isActive('./main') ? 'rgba(253, 185, 19, 0.6)' : 'rgba(114, 191, 68, 0.5)';
 </script>
 
 <div class="grid place-items-center grid-flow-col h-full">
   <div>
     <section class="outer-border p-1 outer-dimensions flex flex-row justify-center items-center">
       {#if shouldShowWeather}
-        <Weather />
+        <Weather fatInnerTriangleColor="{fatInnerTriangleColor}" skinnyInnerTriangleColor={skinnyInnerTriangleColor} />
       {/if}
       <div class="flex w-full items-center inner-border self-stretch">
         <slot></slot>

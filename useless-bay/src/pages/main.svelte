@@ -7,7 +7,7 @@
   import ClimateControl from '../components/equipment/indicators/climate-control.svelte';
 </script>
 
-<SplitTop shouldShowGrid={true}>
+<SplitTop shouldShowGrid={true} border="main">
   <p class="flex flex-row h-full" slot="top-slot">
     <MainTemperature />
     <ClimateControl />
