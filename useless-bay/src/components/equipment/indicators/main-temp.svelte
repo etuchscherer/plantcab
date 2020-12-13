@@ -1,5 +1,5 @@
 <script type="ts">
-  import IndicatorBorder from './indicator-border.svelte';
+  import IndicatorBorder from './borders/double-border.svelte';
 
   export let pageName: string = '';
 </script>
