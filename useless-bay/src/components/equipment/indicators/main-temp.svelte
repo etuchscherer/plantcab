@@ -1,5 +1,11 @@
-<div class="outer-wrapper p-1 ml-1 flex">
-  <div class="inner-wrapper h-full">
+<script type="ts">
+  import IndicatorBorder from './indicator-border.svelte';
+
+  export let pageName: string = '';
+</script>
+
+<IndicatorBorder pageName="{pageName}">
+  <div slot="main-slot" class="flex flex-col items-center">
     <div class="flex flex-col h-full">
       <div class="lead-text mx-auto">Internal Temperature</div>
       <div class="temperature mx-2">87°F</div>
@@ -10,10 +16,9 @@
       </div>
     </div>
   </div>
-</div>
+</IndicatorBorder>
 
 <style lang="scss">
-
   .upcase {
     text-transform: uppercase;
   }
@@ -52,17 +57,5 @@
     text-transform: uppercase;
     font-weight: bold;
     color: #FFE293;
-  }
-
-  .outer-wrapper {
-    border: 2px solid #00AEEF;
-    border-radius: 29px;
-    background-color: black;
-    z-index: 9999;
-  }
-
-  .inner-wrapper {
-    border: 5px solid rgba(0,174,239, 0.5);
-    border-radius: 23px;
   }
 </style>

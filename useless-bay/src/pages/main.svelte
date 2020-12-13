@@ -9,7 +9,7 @@
 
 <SplitTop shouldShowGrid={true} border="main">
   <p class="flex flex-row h-full" slot="top-slot">
-    <MainTemperature />
+    <MainTemperature pageName="main"/>
     <ClimateControl />
   </p>
 
