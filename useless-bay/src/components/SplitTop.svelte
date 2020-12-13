@@ -3,7 +3,7 @@
   export let border: string = 'main';
 </script>
 
-<div class="flex flex-col h-full p-1">
+<div class="flex flex-col h-full p-1 bg-transparent">
   <div class="flex flex-grow top-status {border}-outer-border p-1">
     <div class="{border}-inner-border w-full { shouldShowGrid ? 'bg-grid' : '' } p-1">
       <slot name="top-slot">

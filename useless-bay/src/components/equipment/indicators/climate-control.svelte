@@ -1,13 +1,9 @@
 <script type="ts">
-
+  import UpperTextualWarnings from '../indicators/upper-textual-warnings.svelte';
 </script>
 
 <div class="flex flex-grow flex-col">
-  <div class="bg-black inline-flex w-full warning-indicators">
-    <p class="px-3 low-temp">Low Temp!</p>
-    <p class="px-3 high-temp">Excess Heat!</p>
-    <p class="px-3">Equipment Failure!</p>
-  </div>
+  <UpperTextualWarnings hasLowTemp="{true}" hasHighTemp="{true}" />
   <div class="overflow-hidden">
     <img class="high-temp-sine flip-x" src="/assets/images/wave-high-temp.png" alt="" />
     <img class="low-temp-sine flip-x" src="/assets/images/wave-low-temp.png" alt="" />
@@ -29,19 +25,5 @@
   .flip-x {
     // transform: scaleY(-1);
     z-index: 3;
-  }
-  .warning-indicators {
-    font-size: 18px;
-    text-transform: uppercase;
-    color: rgba(255,255,255, 0.1);
-    min-height: 30px;
-  }
-
-  .low-temp {
-    color: #00AEEF;
-  }
-
-  .high-temp {
-    color: #ED1C24;
   }
 </style>

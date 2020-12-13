@@ -26,7 +26,6 @@
 </div>
 
 <style type="text/scss">
-
   .inner-border {
     border: 5px solid rgba(0,174,239, 0.3);
   }

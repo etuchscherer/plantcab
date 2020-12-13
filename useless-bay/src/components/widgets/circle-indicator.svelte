@@ -8,6 +8,7 @@
     large: '38',
     medium: '28',
     small: '22',
+    tiny: '18'
   }
 
   let diameter = sizes[size];

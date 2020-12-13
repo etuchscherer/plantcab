@@ -14,14 +14,14 @@
   .main-outer-wrapper {
     border: 2px solid #00AEEF;
     border-radius: 29px;
-    background-color: black;
+    background-color: #000936;
     z-index: 9999;
   }
 
   .maintenance-outer-wrapper {
     border: 2px solid #fdb913;
     border-radius: 29px;
-    background-color: black;
+    background-color: #000936;
     z-index: 9999;
   }
 

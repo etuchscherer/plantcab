@@ -1,0 +1,56 @@
+<script lang="ts">
+    import SingleBorder from '../equipment/indicators/borders/single-border.svelte';
+    import WarningIndicator from './warning-indicator.svelte';
+    import Button from './button.svelte';
+    import TwoStateIndicator from './two-state-indicator.svelte';
+
+    export let pageName: string = 'main';
+
+    let isActive;
+
+    let hasPowerAvailable = true;
+</script>
+
+<SingleBorder pageName="{pageName}">
+    <div slot="main-slot" class="flex flex-row bg-transparent">
+        <div class="flex flex-col items-center ml-1">
+            <div class="label uppercase">
+                Light
+            </div>
+            <Button bind:isActive="{isActive}" label="power" classes="my-1" debounceTimer={150} />
+            <TwoStateIndicator label="System Lockout" hasPowerAvailable="{hasPowerAvailable}" />
+        </div>
+        <div class="flex flex-row items-end">
+            <div class="icon-indicator">
+                <WarningIndicator size="md" isActive="{false}" />
+            </div>
+            <div class:active="{isActive}" class="image-light" />
+        </div>
+    </div>
+</SingleBorder>
+
+<style lang="scss">
+    .label {
+        font-size: 28px;
+        color: #00B9F2;
+    }
+
+    .square-indicator {
+        height: 65px;
+        width: 65px;
+        color: white;
+        background-color: #474848;
+    }
+
+    .image-light {
+        width: 148px;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('/assets/images/lower-indicators/light-off.gif');
+
+        &.active {
+            background-image: url('/assets/images/lower-indicators/light-on.gif');
+        }
+    }
+</style>
