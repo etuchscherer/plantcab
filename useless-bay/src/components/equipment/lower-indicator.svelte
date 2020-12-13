@@ -50,6 +50,7 @@
 
     &.fan {
       background-image: url("/assets/images/lower-indicators/fan.png");
+      background-size: contain;
 
       &.active {
         background-image: url("/assets/images/lower-indicators/fan-on.gif");
