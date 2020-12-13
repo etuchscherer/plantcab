@@ -2,7 +2,7 @@
   import LowerIndicator from '../lower-indicator.svelte';
 </script>
 
-<LowerIndicator title="Water Pump" imageClass="pump" isActive={true} warningMessage="check water">
+<LowerIndicator title="Water Pump" imageClass="pump" isActive={false} warningMessage="check water">
   <div class="flex-buster">
     <span class="temperature p-2">
       67°

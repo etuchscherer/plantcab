@@ -2,4 +2,4 @@
   import LowerIndicator from '../lower-indicator.svelte';
 </script>
 
-<LowerIndicator title="Fan" imageClass="fan" isActive={false} />
+<LowerIndicator title="Fan" imageClass="fan" isActive={true} />

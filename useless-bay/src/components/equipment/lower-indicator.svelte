@@ -49,8 +49,7 @@
     }
 
     &.fan {
-      background-image: url("/assets/images/lower-indicators/fan.png");
-      background-size: contain;
+      background-image: url("/assets/images/lower-indicators/fan.gif");
 
       &.active {
         background-image: url("/assets/images/lower-indicators/fan-on.gif");
