@@ -1,14 +1,13 @@
 <script lang="ts">
-    import SingleBorder from '../equipment/indicators/borders/single-border.svelte';
-    import WarningIndicator from './warning-indicator.svelte';
-    import Button from './button.svelte';
-    import TwoStateIndicator from './two-state-indicator.svelte';
+    import SingleBorder from '../equipment/indicators/borders/single-border.svelte'
+    import WarningIndicator from './warning-indicator.svelte'
+    import Button from './button.svelte'
+    import LockoutIndicator from '../equipment/indicators/lockout.svelte'
 
     export let pageName: string = 'main';
 
-    let isActive;
-
-    let hasPowerAvailable = true;
+    let isActive: boolean = false;
+    let isLockedOut: boolean= false;
 </script>
 
 <SingleBorder pageName="{pageName}">
@@ -18,7 +17,7 @@
                 Light
             </div>
             <Button bind:isActive="{isActive}" label="power" classes="my-1" debounceTimer={150} />
-            <TwoStateIndicator label="System Lockout" hasPowerAvailable="{hasPowerAvailable}" />
+            <LockoutIndicator isLockedOut={isLockedOut} />
         </div>
         <div class="flex flex-row items-end">
             <div class="icon-indicator">

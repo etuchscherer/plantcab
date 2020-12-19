@@ -1,8 +1,9 @@
 <script type="ts">
   export let pageName: string = 'main';
+  export let classes: string = '';
 </script>
 
-<div class="{pageName}-wrapper p-1 ml-1 bg-transparent">
+<div class="{pageName}-wrapper p-1 ml-1 bg-transparent {classes}">
   <slot name="main-slot">
     Empty Slot
   </slot>
