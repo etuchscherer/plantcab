@@ -13,16 +13,14 @@
 <SingleBorder pageName="{pageName}">
     <div slot="main-slot" class="flex flex-row bg-transparent">
         <div class="flex flex-col items-center ml-1">
-            <div class="label uppercase">
+            <div class="flex label uppercase">
                 Light
+                <WarningIndicator classes="ml-2" size="md" isActive="{false}" />
             </div>
             <Button bind:isActive="{isActive}" label="power" classes="my-1" debounceTimer={150} />
             <LockoutIndicator isLockedOut={isLockedOut} />
         </div>
         <div class="flex flex-row items-end">
-            <div class="icon-indicator">
-                <WarningIndicator size="md" isActive="{false}" />
-            </div>
             <div class:active="{isActive}" class="image-light" />
         </div>
     </div>

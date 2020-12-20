@@ -3,6 +3,7 @@
   // export let color: string = 'currentColor'
   export let message: string = '';
   export let isActive: boolean = false;
+  export let classes: string = '';
 
   const sizeMap = {
     sm: '1rem',
@@ -17,7 +18,7 @@
   $: color = isActive ? 'rgba(237, 28, 36, 1)': 'rgba(255, 255, 255, 0.1)';
 </script>
 
-<div class="warning inline-flex">
+<div class="warning inline-flex {classes}">
   {#if shouldShowMessage}
     <div class="message flex self-center mr-2">{ message }</div>
   {/if}

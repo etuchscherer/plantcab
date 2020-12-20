@@ -2,6 +2,7 @@
     import IndicatorBorder from '../equipment/indicators/borders/single-border.svelte'
     import LockoutIndicator from '../equipment/indicators/lockout.svelte'
     import Button from './button.svelte'
+    import WarningIndicator from './warning-indicator.svelte'
 
     export let pageName: string = '';
 
@@ -9,19 +10,19 @@
     let isLockedOut: boolean= true;
 </script>
 
-<IndicatorBorder classes="m-1 ml-2" pageName={pageName}>
+<IndicatorBorder classes="m-1" pageName={pageName}>
     <div class="container uppercase h-full" slot="main-slot">
         <div class="flex flex-row h-full">
-            <div class="flex flex-col h-full">
-                <div class="label big uppercase">Water pump</div>
+            <div class="flex flex-col h-full p-2">
+                <div class="flex label big uppercase">Water pump <WarningIndicator classes="ml-2" size="md" isActive="{false}" /></div>
                 <span class="temperature p-2">
                     67°
                 </span>
                 <div class:active="{isActive}" class="image-pump" />
             </div>
-            <IndicatorBorder pageName={pageName}>
+            <IndicatorBorder classes="my-2" pageName={pageName} borderWidth="thin">
                 <div slot="main-slot" class="flex flex-col">
-                    <div class="label uppercase">
+                    <div class="label text-center my-2 uppercase">
                         Master
                         <div class="flex flex-row items-baseline">
                             <div class="flex flex-col">
