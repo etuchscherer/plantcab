@@ -4,7 +4,7 @@
     export let pageName: string = '';
 </script>
 
-<IndicatorBorder pageName="{pageName}" classes="mx-1">
+<IndicatorBorder pageName="{pageName}" classes="ml-2 mr-1">
     <div slot="main-slot" class="container uppercase text-center">
         <p>
             Set desired max&nbsp;temp

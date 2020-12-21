@@ -6,6 +6,7 @@
   import MainTemperature from '../components/equipment/indicators/main-temp.svelte'
   import LightControl from '../components/widgets/light-control.svelte'
   import SplitTop from '../components/SplitTop.svelte'
+  import AuxPanel from '../components/widgets/twelve-volt-supply.svelte'
 </script>
 
 <SplitTop border="maintenance">
@@ -17,6 +18,7 @@
       <div class="flex justify-around">
         <ClimateControl pageName="maintenance" />
         <LightControl pageName="maintenance" />
+        <AuxPanel />
       </div>
     </div>
   </div>

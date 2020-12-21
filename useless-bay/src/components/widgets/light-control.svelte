@@ -10,7 +10,7 @@
     let isLockedOut: boolean= false;
 </script>
 
-<SingleBorder pageName="{pageName}">
+<SingleBorder pageName="{pageName}" classes="ml-1">
     <div slot="main-slot" class="flex flex-row bg-transparent">
         <div class="flex flex-col items-center ml-1">
             <div class="flex label uppercase">

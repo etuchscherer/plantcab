@@ -1,0 +1,67 @@
+<svg
+class="ml-3"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="57.247196mm"
+   height="53.027515mm"
+   viewBox="0 0 57.247196 53.027516"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="triangle.svg"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.9608154"
+     inkscape:cx="126.02561"
+     inkscape:cy="121.72538"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     inkscape:window-width="1252"
+     inkscape:window-height="943"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid13"
+       originx="-28.159224"
+       originy="-72.685172" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-28.159223,-72.685165)">
+    <path
+       id="rect10"
+       style="fill:none;stroke:#f5b913;stroke-width:1.32292"
+       d="m 28.820683,75.746426 v 44.304794 c 0,2.93159 2.068417,5 5,5 h 50 l -50,-50.499998 c -1.410229,-1.785937 -5,-1.736379 -5,1.195204 z"
+       sodipodi:nodetypes="sssccs" />
+  </g>
+</svg>
