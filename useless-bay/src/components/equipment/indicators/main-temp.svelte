@@ -10,9 +10,9 @@
       <div class="lead-text mx-auto">Internal Temperature</div>
       <div class="temperature mx-2">87°F</div>
       <div class="flex flex-row text-xs mx-2 mt-3 justify-around">
-        <div class="unit-indicator m-0 px-1 active">°F</div>
-        <div class="unit-indicator m-0 mx-1 px-1">°C</div>
-        <div class="manual-mode-indicator px-1 upcase active">Manual Mode Engaged</div>
+        <div class="unit-indicator m-0 p-1 active">°F</div>
+        <div class="unit-indicator m-0 mx-1 p-1">°C</div>
+        <div class="manual-mode-indicator p-1 upcase active">Manual Mode Engaged</div>
       </div>
     </div>
   </div>

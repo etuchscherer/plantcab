@@ -20,7 +20,7 @@
     {/if}
     <div class="filler flex-grow"></div>
     <div class="mr-4">
-      <Warning size="lg" color="rgba(255, 255, 255, 0.4)" message={warningMessage} />
+      <Warning size="lg" message={warningMessage} />
     </div>
   </div>
 
