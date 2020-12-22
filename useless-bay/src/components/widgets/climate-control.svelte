@@ -9,12 +9,12 @@
         <p>
             Set desired max&nbsp;temp
         </p>
-        <button class="temp-button mb-1">78°</button>
+        <button class="overflow-hidden temp-button mb-1">78°</button>
         <hr>
         <p class="mt-1">
             Set desired low&nbsp;temp
         </p>
-        <button class="temp-button">72°</button>
+        <button class="overflow-hidden temp-button">72°</button>
     </div>
 </IndicatorBorder>
 
