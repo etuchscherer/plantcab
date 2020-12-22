@@ -42,14 +42,6 @@
     color: #72BF44;
     max-height: 120px;
     line-height: 154px;
-
-    &.danger {
-      color: #ED1C24;
-    }
-
-    &.cold {
-      color: #00AeFF;
-    }
   }
 
   .lead-text {

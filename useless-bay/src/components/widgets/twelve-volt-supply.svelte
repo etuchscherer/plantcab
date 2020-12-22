@@ -26,7 +26,7 @@
             <WarningIndicator classes="ml-2" size="md" isActive={false} />
             <Button bind:isActive={isActive} label="disable" size="half" classes="my-1" debounceTimer={150} />
             <div class="flex flex-row items-center">
-                <img src="/assets/images/12v-on.png" />
+                <img src="/assets/images/12v-on.png" alt="" />
                 <p class:active={isAuxActive} class="test-button ml-2 text-white flex justify-center items-center uppercase">
                     aux
                 </p>

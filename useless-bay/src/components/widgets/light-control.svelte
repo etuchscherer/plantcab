@@ -32,13 +32,6 @@
         color: #00B9F2;
     }
 
-    .square-indicator {
-        height: 65px;
-        width: 65px;
-        color: white;
-        background-color: #474848;
-    }
-
     .image-light {
         width: 148px;
         height: 100%;
