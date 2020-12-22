@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { createEventDispatcher } from 'svelte'
     import { debounce } from 'lodash';
     export let debounceTimer: number = 0;
     export let label: string = 'button';
@@ -6,8 +7,10 @@
     export let classes: string = '';
     export let size: string = 'normal';
 
+    const dispatch = createEventDispatcher()
     const doToggle = debounce(e => {
         isActive = !isActive;
+        dispatch('toggle', isActive);
     }, debounceTimer);
 </script>
 

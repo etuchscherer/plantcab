@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { isLightOn } from '../../store'
     import SingleBorder from '../equipment/indicators/borders/single-border.svelte'
     import WarningIndicator from './warning-indicator.svelte'
     import Button from './button.svelte'
@@ -8,6 +9,10 @@
 
     let isActive: boolean = false;
     let isLockedOut: boolean= false;
+
+    function doToggle(event) {
+        isLightOn.set(event.detail);
+    }
 </script>
 
 <SingleBorder pageName="{pageName}" classes="ml-1">
@@ -17,11 +22,11 @@
                 Light
                 <WarningIndicator classes="ml-2" size="md" isActive="{false}" />
             </div>
-            <Button bind:isActive="{isActive}" label="power" classes="my-1" debounceTimer={150} />
+            <Button isActive="{$isLightOn}" label="power" classes="my-1" debounceTimer={150} on:toggle={doToggle} />
             <LockoutIndicator isLockedOut={isLockedOut} />
         </div>
         <div class="flex flex-row items-end">
-            <div class:active="{isActive}" class="image-light" />
+            <div class:active="{$isLightOn}" class="image-light" />
         </div>
     </div>
 </SingleBorder>
