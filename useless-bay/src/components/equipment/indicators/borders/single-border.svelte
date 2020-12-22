@@ -14,13 +14,13 @@
   .main-wrapper {
     border: 5px solid #00AEEF;
     border-radius: 20px;
-    z-index: 9999;
+    z-index: 9998;
   }
 
   .maintenance-wrapper {
     border: 5px solid #fdb913;
     border-radius: 20px;
-    z-index: 9999;
+    z-index: 9998;
   }
 
   .thin {

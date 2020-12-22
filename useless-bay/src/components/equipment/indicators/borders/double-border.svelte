@@ -15,14 +15,14 @@
     border: 2px solid #00AEEF;
     border-radius: 29px;
     background-color: #000936;
-    z-index: 9999;
+    z-index: 9998;
   }
 
   .maintenance-outer-wrapper {
     border: 2px solid #fdb913;
     border-radius: 29px;
     background-color: #000936;
-    z-index: 9999;
+    z-index: 9998;
   }
 
   .main-inner-wrapper {

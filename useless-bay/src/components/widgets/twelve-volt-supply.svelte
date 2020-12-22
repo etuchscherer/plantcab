@@ -1,12 +1,16 @@
 <script lang="ts">
+    import { isAuxOn } from '../../store'
     import WarningIndicator from './warning-indicator.svelte'
     import Button from './button.svelte'
 
     let isActive: boolean = false;
-    let isAuxActive: boolean = false;
+
+    function toggleAux() {
+        isAuxOn.set(!$isAuxOn);
+    }
 </script>
 
-<div class="relative">
+<div class="relative bring-to-front">
     <svg
     class="ml-2"
     width="57.247196mm"
@@ -27,7 +31,11 @@
             <Button bind:isActive={isActive} label="disable" size="half" classes="my-1" debounceTimer={150} />
             <div class="flex flex-row items-center">
                 <img src="/assets/images/12v-on.png" alt="" />
-                <p class:active={isAuxActive} class="test-button ml-2 text-white flex justify-center items-center uppercase">
+                <p 
+                    class:active={$isAuxOn} 
+                    class="test-button ml-2 text-white flex justify-center items-center uppercase"
+                    on:click={toggleAux}
+                >
                     aux
                 </p>
             </div>
@@ -36,6 +44,10 @@
 </div>
 
 <style lang="scss">
+    .bring-to-front {
+        z-index: 9999;
+    }
+
     .useable-space {
         height: 145px;
         width: 170px;

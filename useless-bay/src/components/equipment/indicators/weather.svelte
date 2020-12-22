@@ -89,7 +89,7 @@
     position: absolute;
     top: 4px;
     right: 4px;
-    z-index: 9999;
+    z-index: 9998;
   }
   .external-data {
     position: absolute;
