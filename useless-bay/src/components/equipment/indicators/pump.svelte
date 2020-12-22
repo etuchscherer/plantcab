@@ -1,8 +1,9 @@
 <script type="ts">
-  import LowerIndicator from '../lower-indicator.svelte';
+  import { isPumpOn } from '../../../store'
+  import LowerIndicator from '../lower-indicator.svelte'
 </script>
 
-<LowerIndicator title="Water Pump" imageClass="pump" isActive={false} warningMessage="check water">
+<LowerIndicator title="Water Pump" imageClass="pump" isActive={$isPumpOn} warningMessage="check water">
   <div class="flex-buster">
     <span class="temperature p-2">
       67°
