@@ -1,8 +1,14 @@
 <script lang="ts">
+  import { time, weather, isDaytime } from '../../../store'
+  import { kelvinToF } from '../../../utils'
+  import moment from 'moment';
+
   // We default to the dashboard colors
   export let fatInnerTriangleColor: string = '#FDB913';
   export let skinnyInnerTriangleColor: string = 'rgba(253, 185, 19, 0.6)';
 
+  // @see https://home.openweathermap.org/api_keys
+  const apiKey: string = '8260f045aec83a027b2e447a7dae49f8';
   const backgroundColor: string = '#000936';
 </script>
 
@@ -34,23 +40,24 @@
   <div class="external-data mr-4 mt-3">
     <div class="flex flex-row">
       <div class="flex flex-col p-2 pt-5">
-        <div class="text-white date text-right">06/23/2020</div>
-        <div class="time text-right">8:26 am</div>
+        <div class="text-white date text-right">{moment($time).format('L')}</div>
+        <div class="time text-right lowercase">{moment($time).format('LT')}</div>
       </div>
       <div class="flex flex-col p-2 right-col right-col items-center">
-        <div class="sun rotate" />
+        <div class:rotating-sun={isDaytime} class:moon={!isDaytime} />
         <div class="text-white external-temp-tag text-center mt-2">External Temp</div>
-        <div class="text-yellow-100 external-temp">86°</div>
+        {#await $weather}
+          <div class="text-yellow-100 external-temp">fetching...</div>  
+        {:then weather} 
+          <div class="text-yellow-100 external-temp">{kelvinToF(weather.data.main.temp)}°</div>  
+        {/await}
+        
       </div>
     </div>
   </div>
 </div>
 
 <style type="text/scss">
-
-  .rotate {
-    animation: rotation 30s infinite linear;
-  }
 
   .right-col {
     width: 65px;
@@ -79,12 +86,22 @@
     color: #FDB913;
   }
 
-  .sun {
+  .rotating-sun {
     height: 65px;
     width: 65px;
     background-image: url("/assets/images/sun.png");
     background-size: contain;
+    animation: rotation 30s infinite linear;
   }
+
+  .moon {
+    height: 65px;
+    width: 65px;
+    background-image: url("/assets/images/moon.png");
+    background-size: contain;
+    margin: 2px;
+  }
+
   .triangle-wrapper {
     position: absolute;
     top: 4px;
