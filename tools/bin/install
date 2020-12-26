@@ -1,0 +1,6 @@
+#!/bin/bash
+
+PROJECT_NAME=plantcab
+INSTALL_DIR=~/Sites/$PROJECT_NAME
+
+mkdir -vp $INSTALL_DIR;
