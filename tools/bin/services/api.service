@@ -1,0 +1,10 @@
+[Unit]
+Description=Gpio API
+After=network.target
+
+[Service]
+ExecStart=/home/pi/Sites/gpio-server/api/bin/www
+WorkingDirectory=/home/pi/Sites/gpio-server/api
+
+[Install]
+WantedBy=multi-user.target
