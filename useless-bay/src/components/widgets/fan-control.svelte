@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { isFanOn } from '../../store'
+    import { equipmentStateManager } from '../../store'
+    import { toggleFan } from '../../services/fan.svelte'
     import IndicatorBorder from '../equipment/indicators/borders/single-border.svelte'
     import LockoutIndicator from '../equipment/indicators/lockout.svelte'
     import Button from './button.svelte'
@@ -9,8 +10,8 @@
 
     let isLockedOut: boolean= false;
 
-    function doToggle(event) {
-        isFanOn.set(event.detail);
+    function doToggle() {
+        toggleFan();
     }
 </script>
 
@@ -19,7 +20,7 @@
         <div class="flex flex-row h-full">
             <div class="flex flex-col h-full p-1 pl-0">
                 <div class="flex label big uppercase">Fan <WarningIndicator classes="ml-2" size="md" isActive="{false}" /></div>
-                <div class:active="{$isFanOn}" class="image-fan" />
+                <div class:active="{$equipmentStateManager.toggled.fan}" class="image-fan" />
             </div>
             <IndicatorBorder borderWidth="thin" pageName={pageName} classes="my-1 mr-1">
                 <div slot="main-slot" class="flex flex-col">
@@ -27,7 +28,7 @@
                         Master
                         <div class="flex flex-row items-baseline">
                             <div class="flex flex-col">
-                                <Button bind:isActive="{$isFanOn}" label="power" classes="my-1 mx-1" debounceTimer={150} on:toggle={doToggle} />
+                                <Button bind:isActive="{$equipmentStateManager.toggled.fan}" label="power" classes="my-1 mx-1" debounceTimer={150} on:toggle={doToggle} />
                                 <LockoutIndicator classes="my-1 mx-1" isLockedOut={isLockedOut} />
                             </div>
                             <div class="flex flex-col">

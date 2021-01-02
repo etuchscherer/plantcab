@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { isPumpOn } from '../../store'
+    import { equipmentStateManager } from '../../store'
+    import { togglePump } from '../../services/pump.svelte'
     import IndicatorBorder from '../equipment/indicators/borders/single-border.svelte'
     import LockoutIndicator from '../equipment/indicators/lockout.svelte'
     import Button from './button.svelte'
@@ -7,11 +8,10 @@
 
     export let pageName: string = '';
 
-    let isActive: boolean = false;
     let isLockedOut: boolean= true;
 
-    function doToggle(event) {
-        isPumpOn.set(event.detail);
+    function doToggle() {
+        togglePump()
     }
 </script>
 
@@ -23,7 +23,7 @@
                 <span class="temperature p-2">
                     67°
                 </span>
-                <div class:active="{$isPumpOn}" class="image-pump" />
+                <div class:active="{$equipmentStateManager.toggled.pump}" class="image-pump" />
             </div>
             <IndicatorBorder classes="my-1 mr-1" pageName={pageName} borderWidth="thin">
                 <div slot="main-slot" class="flex flex-col">
@@ -31,7 +31,7 @@
                         Master
                         <div class="flex flex-row items-baseline">
                             <div class="flex flex-col">
-                                <Button bind:isActive="{$isPumpOn}" label="power" classes="my-1 mx-1" debounceTimer={150} on:toggle={doToggle} />
+                                <Button bind:isActive="{$equipmentStateManager.toggled.pump}" label="power" classes="my-1 mx-1" debounceTimer={150} on:toggle={doToggle} />
                                 <LockoutIndicator classes="my-1 mx-1" isLockedOut={isLockedOut} />
                             </div>
                             <div class="flex flex-col">

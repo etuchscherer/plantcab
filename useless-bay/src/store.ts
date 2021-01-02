@@ -1,3 +1,5 @@
+/// <reference path="./types/useless-bay.d.ts">
+import type * as UselessBayTypes from 'UselessBayTypes';
 import { writable, readable, derived } from 'svelte/store'
 import moment from 'moment';
 import { fetchWeather } from './utils'
@@ -5,6 +7,21 @@ import { fetchWeather } from './utils'
 export const apiKey = '8260f045aec83a027b2e447a7dae49f8';
 export const zip = '98296';
 
+export const apiOptions = {
+  host: 'localhost',
+  port: '5000'
+}
+
+const _equipmentState: UselessBayTypes.equipmentState = {
+  toggled: {
+    light: false,
+    pump: false,
+    fan: false,
+    aux: false
+  }
+}
+
+export const equipmentStateManager = writable(_equipmentState);
 export const isLightOn = writable(false);
 export const isPumpOn = writable(false);
 export const isFanOn = writable(false);
