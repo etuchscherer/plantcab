@@ -1,5 +1,6 @@
 <script lang="ts">
     import { equipmentStateManager } from '../../store'
+    import { clearEquipmentWarning } from '../../utils/equipment.svelte'
     import { toggleLight } from '../../services/light.svelte'
     import SingleBorder from '../equipment/indicators/borders/single-border.svelte'
     import WarningIndicator from './warning-indicator.svelte'
@@ -13,6 +14,10 @@
     function doToggle() {
         toggleLight();
     }
+
+    function resetWarn() {
+      clearEquipmentWarning({ name: 'light' });
+    }
 </script>
 
 <SingleBorder pageName="{pageName}" classes="ml-1">
@@ -20,7 +25,10 @@
         <div class="flex flex-col items-center ml-1">
             <div class="flex label uppercase">
                 Light
-                <WarningIndicator classes="ml-2" size="md" isActive="{false}" />
+                <!-- TODO: adding the clear warn fn here is a filthy hack - to circumvent a design deficiency -->
+                <div on:click={resetWarn}>
+                  <WarningIndicator classes="ml-2" size="md" isActive="{$equipmentStateManager.warning.light.isActive}" />
+                </div>
             </div>
             <Button bind:isActive="{$equipmentStateManager.toggled.light}" label="power" classes="my-1" debounceTimer={150} on:toggle={doToggle} />
             <LockoutIndicator isLockedOut={isLockedOut} />

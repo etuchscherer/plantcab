@@ -39,6 +39,7 @@ import { dataset_dev } from 'svelte/internal';
   }
 
   export function clearEquipmentWarning({ name }: { name: string }) {
+    console.log('clear all warnings for ', name);
     equipmentStateManager.update(oldState => {
       const newState = oldState;
       newState.warning[name] = {
