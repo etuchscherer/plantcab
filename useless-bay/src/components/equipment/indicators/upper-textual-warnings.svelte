@@ -1,7 +1,9 @@
 <script type="ts">
+    import { hasEquipmentWarning } from '../../../store'
+
     export let hasLowTemp: boolean = false;
     export let hasHighTemp: boolean = false;
-    export let hasEquipmentFailure: boolean = false;
+    $: hasEquipmentFailure = $hasEquipmentWarning;
 </script>
 
 <div class="inline-flex w-full warning-indicators main-color">

@@ -1,13 +1,13 @@
 <script type="ts">
-  import { isActive, url } from "@sveltech/routify";
-  import MessageIndicator from '../components/widgets/message-indicator.svelte';
+  import { isActive, url } from '@sveltech/routify'
+  import MessageIndicator from '../components/widgets/message-indicator.svelte'
+  import { hasEquipmentWarning } from '../store'
 
   export let shouldDisableMessages = true;
   export let hasHeatAlert = true;
-  export let hasEquipmentFailure = false;
 
   let shouldShowHeatAlert = !shouldDisableMessages && hasHeatAlert;
-  let shouldShowEquipmentFailure = !shouldDisableMessages && hasEquipmentFailure;
+  $: shouldShowEquipmentFailure = !shouldDisableMessages && $hasEquipmentWarning;
 </script>
 
 <footer class="flex flex-row justify-between">

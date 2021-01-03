@@ -71,3 +71,9 @@ export const isDaytime = derived([weather, time], async ([$weather, $time]) => {
 	const now = moment($time);
 	return now.isBetween(moment(sunrise * 1000), moment(sunset * 1000));
 });
+
+export const hasEquipmentWarning = derived(equipmentStateManager, (equipmentStateManager) => {
+  const { light, pump, fan, aux } = equipmentStateManager.warning;
+
+  return light.isActive || pump.isActive || fan.isActive || aux.isActive;
+})
