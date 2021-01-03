@@ -21,7 +21,7 @@
       </div>
     </section>
 
-    <Footer shouldDisableMessages={shouldDisableFooterMessages} hasHeatAlert={true} hasEquipmentFailure={true} />
+    <Footer shouldDisableMessages={shouldDisableFooterMessages} />
   </div>
 </div>
 

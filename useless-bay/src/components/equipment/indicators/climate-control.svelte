@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex flex-grow flex-col">
-  <UpperTextualWarnings hasLowTemp="{true}" hasHighTemp="{true}" />
+  <UpperTextualWarnings />
   <div class="overflow-hidden">
     <img class="high-temp-sine flip-x" src="/assets/images/wave-high-temp.png" alt="" />
     <img class="low-temp-sine flip-x" src="/assets/images/wave-low-temp.png" alt="" />

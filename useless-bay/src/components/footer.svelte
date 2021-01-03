@@ -1,19 +1,17 @@
 <script type="ts">
   import { isActive, url } from '@sveltech/routify'
   import MessageIndicator from '../components/widgets/message-indicator.svelte'
-  import { hasEquipmentWarning } from '../store'
+  import { hasEquipmentWarning, hasHighTempWarning } from '../store'
 
-  export let shouldDisableMessages = true;
-  export let hasHeatAlert = true;
+  export let shouldDisableMessages = true
 
-  let shouldShowHeatAlert = !shouldDisableMessages && hasHeatAlert;
   $: shouldShowEquipmentFailure = !shouldDisableMessages && $hasEquipmentWarning;
 </script>
 
 <footer class="flex flex-row justify-between">
   <a class="footer-link" class:active={$isActive('./main')} href={$url('./main')}>Main</a>
   <div class="flex flex-col">
-    <MessageIndicator message="!excess heat alert!" isActive={shouldShowHeatAlert} messageType="danger" />
+    <MessageIndicator message="!excess heat alert!" isActive={$hasHighTempWarning} messageType="danger" />
     <MessageIndicator message="!equipment failure!" isActive={shouldShowEquipmentFailure} messageType="danger" />
   </div>
   <a class="footer-link" class:active={$isActive('./reports')} href={$url('./reports')}>Reports</a>

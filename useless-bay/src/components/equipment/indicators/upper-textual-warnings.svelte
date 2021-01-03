@@ -1,14 +1,12 @@
 <script type="ts">
-    import { hasEquipmentWarning } from '../../../store'
+    import { hasEquipmentWarning, hasHighTempWarning, hasLowTempWarning } from '../../../store'
 
-    export let hasLowTemp: boolean = false;
-    export let hasHighTemp: boolean = false;
     $: hasEquipmentFailure = $hasEquipmentWarning;
 </script>
 
 <div class="inline-flex w-full warning-indicators main-color">
-  <p class:active="{hasLowTemp}" class="px-3 low-temp">Low Temp!</p>
-  <p class:active="{hasHighTemp}" class="px-3 high-temp">Excess Heat!</p>
+  <p class:active="{$hasLowTempWarning}" class="px-3 low-temp">Low Temp!</p>
+  <p class:active="{$hasHighTempWarning}" class="px-3 high-temp">Excess Heat!</p>
   <p class:active="{hasEquipmentFailure}" class="px-3 equipment-failure">Equipment Failure!</p>
 </div>
 

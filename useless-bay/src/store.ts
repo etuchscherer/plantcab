@@ -1,11 +1,11 @@
 /// <reference path="./types/useless-bay.d.ts">
-import type * as UselessBayTypes from 'UselessBayTypes';
+import type * as UselessBayTypes from 'UselessBayTypes'
 import { writable, readable, derived } from 'svelte/store'
-import moment from 'moment';
+import moment from 'moment'
 import { fetchWeather } from './utils'
 
-export const apiKey = '8260f045aec83a027b2e447a7dae49f8';
-export const zip = '98296';
+export const apiKey = '8260f045aec83a027b2e447a7dae49f8'
+export const zip = '98296'
 
 export const apiOptions = {
   host: 'localhost',
@@ -13,6 +13,12 @@ export const apiOptions = {
 }
 
 const _equipmentState: UselessBayTypes.equipmentState = {
+  internalTemperature: {
+    maxAllowed: 26,
+    minAllowed: 20,
+    current: 26,
+    units: 'f'
+  },
   toggled: {
     light: false,
     pump: false,
@@ -76,4 +82,16 @@ export const hasEquipmentWarning = derived(equipmentStateManager, (equipmentStat
   const { light, pump, fan, aux } = equipmentStateManager.warning;
 
   return light.isActive || pump.isActive || fan.isActive || aux.isActive;
-})
+});
+
+export const hasLowTempWarning = derived(equipmentStateManager, (equipmentStateManager) => {
+  const { minAllowed, current  } = equipmentStateManager.internalTemperature;
+
+  return current < minAllowed;
+});
+
+export const hasHighTempWarning = derived(equipmentStateManager, (equipmentStateManager) => {
+  const { maxAllowed, current  } = equipmentStateManager.internalTemperature;
+
+  return current > maxAllowed;
+});

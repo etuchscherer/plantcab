@@ -8,7 +8,7 @@ interface WeatherOptions {
 /**
  * Returns weather object from https://openweathermap.org/
  * All temps are in kelvin
- * @param obj 
+ * @param obj
  */
 export async function fetchWeather({ zip, apiKey }: WeatherOptions) {
     const url = `//api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}`;
@@ -21,4 +21,8 @@ export function kelvinToC(degrees: number) {
 
 export function kelvinToF(degrees: number) {
     return Math.round(kelvinToC(degrees) * 9/5 + 32);
+}
+
+export function celsiusToF(degrees: number) {
+  return Math.round(degrees * 9/5) + 32;
 }

@@ -11,7 +11,15 @@ declare module "UselessBayTypes" {
     description: string[]
   }
 
+  export interface internalTemperature {
+    maxAllowed: number,
+    minAllowed: number,
+    current: number,
+    units: string
+  }
+
   export interface equipmentState {
+    internalTemperature: internalTemperature,
     toggled: {
       light: boolean,
       pump: boolean,

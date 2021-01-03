@@ -13,7 +13,7 @@
   <div slot="top-slot" class="flex flex-row h-full">
     <MainTemperature pageName="maintenance"/>
     <div class="flex flex-col">
-      <UpperTextualWarnings hasEquipmentFailure="{true}" />
+      <UpperTextualWarnings />
       <!-- flex class prevents taking full width -->
       <div class="flex justify-around">
         <ClimateControl pageName="maintenance" />

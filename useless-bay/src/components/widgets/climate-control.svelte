@@ -1,7 +1,19 @@
 <script lang="ts">
     import IndicatorBorder from '../equipment/indicators/borders/single-border.svelte';
+    import { equipmentStateManager } from '../../store';
+    import { celsiusToF } from '.././../utils';
 
     export let pageName: string = '';
+
+    $: maxTemp = function() {
+      const { maxAllowed, units } = $equipmentStateManager.internalTemperature;
+      return units === 'c' ? maxAllowed : celsiusToF(maxAllowed);
+    }
+
+    $: minTemp = function() {
+      const { minAllowed, units } = $equipmentStateManager.internalTemperature;
+      return units === 'c' ? minAllowed : celsiusToF(minAllowed);
+    }
 </script>
 
 <IndicatorBorder pageName="{pageName}" classes="ml-2 mr-1">
@@ -9,12 +21,12 @@
         <p>
             Set desired max&nbsp;temp
         </p>
-        <button class="overflow-hidden temp-button mb-1">78°</button>
+        <button class="overflow-hidden temp-button mb-1">{maxTemp()}°</button>
         <hr>
         <p class="mt-1">
             Set desired low&nbsp;temp
         </p>
-        <button class="overflow-hidden temp-button">72°</button>
+        <button class="overflow-hidden temp-button">{minTemp()}°</button>
     </div>
 </IndicatorBorder>
 
