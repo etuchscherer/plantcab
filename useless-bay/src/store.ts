@@ -18,6 +18,24 @@ const _equipmentState: UselessBayTypes.equipmentState = {
     pump: false,
     fan: false,
     aux: false
+  },
+  warning: {
+    light: {
+      isActive: false,
+      description: []
+    },
+    pump: {
+      isActive: false,
+      description: []
+    },
+    fan: {
+      isActive: false,
+      description: []
+    },
+    aux: {
+      isActive: false,
+      description: []
+    }
   }
 }
 

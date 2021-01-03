@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
    /// <reference path="../types/useless-bay.d.ts">
-  import { setEquipmentState } from './equipment.svelte'
+  import { setEquipmentState, setEquipmentWarning } from './equipment.svelte'
   import { apiOptions } from '../store'
   import type * as MyTypes from 'UselessBayTypes';
 
@@ -24,6 +24,11 @@
       response = await fetch(url, { method });
     } catch (e) {
       console.error('bad response from server', e);
+
+      if (e = "TypeError: failed to fetch") {
+        setEquipmentWarning({ name, description: e });
+      }
+
       return;
     }
 
