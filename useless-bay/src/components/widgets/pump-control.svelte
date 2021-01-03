@@ -1,5 +1,6 @@
 <script lang="ts">
     import { equipmentStateManager } from '../../store'
+    import { clearEquipmentWarning } from '../../utils/equipment.svelte'
     import { togglePump } from '../../services/pump.svelte'
     import IndicatorBorder from '../equipment/indicators/borders/single-border.svelte'
     import LockoutIndicator from '../equipment/indicators/lockout.svelte'
@@ -13,13 +14,17 @@
     function doToggle() {
         togglePump()
     }
+
+    function resetWarn() {
+        clearEquipmentWarning({ name: 'pump' });
+    }
 </script>
 
 <IndicatorBorder classes="m-1" pageName={pageName}>
     <div class="container uppercase h-full" slot="main-slot">
         <div class="flex flex-row h-full">
             <div class="flex flex-col h-full p-1">
-                <div class="flex label big uppercase">Water pump <WarningIndicator classes="ml-2" size="md" isActive="{false}" /></div>
+                <div class="flex label big uppercase">Water pump <WarningIndicator classes="ml-2" size="md" isActive="{$equipmentStateManager.warning.pump.isActive}" /></div>
                 <span class="temperature p-2">
                     67°
                 </span>
@@ -36,7 +41,7 @@
                             </div>
                             <div class="flex flex-col">
                                 <LockoutIndicator classes="my-1 mx-1" isLockedOut={isLockedOut} />
-                                <LockoutIndicator classes="my-1 mx-1" isLockedOut={isLockedOut} />
+                                <Button isActive={$equipmentStateManager.warning.pump.isActive} label="warn reset" classes="my-1 mx-1" on:toggle={resetWarn} />
                             </div>
                         </div>
                     </div>
