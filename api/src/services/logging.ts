@@ -4,7 +4,14 @@ const { combine, colorize } = format;
 
 const logger = createLogger({
   level: 'debug',
-  format: format.json(),
+  format: format.combine(
+    format.timestamp({
+      format: 'YYYY-MM-DD HH:mm:ss'
+    }),
+    format.errors({ stack: true }),
+    format.splat(),
+    format.json()
+  ),
   transports: [
     new transports.Console({
       format: combine(colorize()),
