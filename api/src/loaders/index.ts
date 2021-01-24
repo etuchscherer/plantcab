@@ -1,6 +1,6 @@
 import loadExpress from '@/loaders/express';
 import loadSystemManager from '@/loaders/systemManager';
-import loadEquipment from '@/loaders/equipment';
+import loadRoutes from '@/loaders/routes';
 import { info } from '@/services/logging';
 import { Application } from 'express';
 
@@ -12,12 +12,16 @@ export default async (): Promise<Application> => {
 
   const app = await loadExpress();
 
-  // must load system manager, before equipment
+  // TODO :: get the board working first
+  // we must load the system manager
+  // before we load the routes
+  info('calling system manager loader', label);
   loadSystemManager(app);
 
-  // TODO: instansiating something, but it's not
-  // configured yet.
-  loadEquipment(app);
+  // we must load the routes, after app-wide
+  // context and state has been loaded
+  info('calling route loader', label);
+  loadRoutes(app);
 
   return app;
 }

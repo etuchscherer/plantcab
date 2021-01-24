@@ -1,14 +1,18 @@
-import Cache from '@/services/cache';
+// import Cache from '@/services/cache';
 import Board from '@/services/board';
 
-export default class SystemManager extends Cache {
+export default class SystemManager {
 
-  constructor({ boardOptions }: { boardOptions: RPIO.Options }) {
-    super();
-    this.set('main_board', new Board(boardOptions));
+  public board: Board;
+
+  constructor() {
+    // super();
+    const boardOptions = {}
+    this.board = new Board(boardOptions);
+    // this.set('main_board', new Board(boardOptions));
   }
 
-  dumpCache(): unknown {
-    return super.debug();
-  }
+  // dumpCache(): unknown {
+  //   return super.debug();
+  // }
 }
