@@ -2,6 +2,11 @@ import rpio from 'rpio';
 
 const { HIGH, LOW, INPUT, OUTPUT } = rpio;
 
+interface PinStatus {
+  pin: number;
+  energized: boolean;
+}
+
 export default class Board {
   rpio: Rpio;
 
@@ -20,8 +25,9 @@ export default class Board {
    * Read a value from a pin
    * @param pin
    */
-  readPin(pin: number): number {
-    return this.rpio.read(pin);
+  readPin(pin: number): PinStatus {
+    const energized = !!this.rpio.read(pin);
+    return { pin, energized };
   }
 
   /**
@@ -29,8 +35,9 @@ export default class Board {
    * @param pin
    * @param state
    */
-  writePin(pin: number, state: number): void {
-    return this.rpio.write(pin, state);
+  writePin(pin: number, state: number): PinStatus {
+    this.rpio.write(pin, state);
+    return { pin, energized: !!state };
   }
 }
 
