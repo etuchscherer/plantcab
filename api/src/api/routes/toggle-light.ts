@@ -1,4 +1,4 @@
-import { Application, Router } from "express";
+import { Application, Router } from 'express';
 
 const route = function(app: Application, router: Router): Router {
 
