@@ -16,14 +16,16 @@ describe('gpio tests', () => {
 
   test('can initialize a pin', () => {
     board.initPin(16, OUTPUT, LOW);
-    const state = board.readPin(16);
-    expect(state).toBe(LOW);
+    const { pin, energized } = board.readPin(16);
+    expect(pin).toBe(16);
+    expect(energized).toBe(false);
   });
 
   test('can turn a pin on', () => {
     board.initPin(16, OUTPUT, LOW);
     board.writePin(16, HIGH);
-    const state = board.readPin(16);
-    expect(state).toBe(HIGH);
+    const { pin, energized } = board.readPin(16);
+    expect(pin).toBe(16);
+    expect(energized).toBe(true);
   });
 });
