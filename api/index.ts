@@ -1,7 +1,7 @@
 import 'module-alias/register';
 import { info } from '@/services/logging';
 
-const port = 8080; // default port to listen
+const port = 8080; // default port
 const label = 'loading';
 
 // initialize the application
